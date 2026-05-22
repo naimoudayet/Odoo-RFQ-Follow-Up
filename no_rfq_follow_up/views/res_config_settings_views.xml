@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2026 Naim OUDAYET
+    License LGPL-3
+
+    Adds the RFQ follow-up reminder cadence to the Purchase settings page,
+    inside the existing "Orders" block.
+-->
+<odoo>
+    <record id="res_config_settings_view_form_rfq_follow_up" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.rfq.follow.up</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='purchase_setting_container']" position="inside">
+                <setting id="rfq_follow_up_reminders"
+                         string="RFQ Follow-Up Reminders"
+                         help="Automatically email vendors an escalating reminder while a sent RFQ stays unanswered">
+                    <div class="content-group">
+                        <div class="row mt8">
+                            <label for="rfq_reminder_offset_1" class="col-lg-7 o_light_label"/>
+                            <field name="rfq_reminder_offset_1"/>
+                        </div>
+                        <div class="row">
+                            <label for="rfq_reminder_offset_2" class="col-lg-7 o_light_label"/>
+                            <field name="rfq_reminder_offset_2"/>
+                        </div>
+                        <div class="row">
+                            <label for="rfq_reminder_offset_3" class="col-lg-7 o_light_label"/>
+                            <field name="rfq_reminder_offset_3"/>
+                        </div>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

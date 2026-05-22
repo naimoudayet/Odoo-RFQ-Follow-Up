@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2026 Naim OUDAYET
+    License LGPL-3
+
+    Three escalating RFQ follow-up templates fired by the daily cron.
+    Admins can edit subject, body, or email_from under Settings >
+    Technical > Email Templates without touching code.
+
+    use_default_to routes the email to the order's standard recipients
+    (the vendor on purchase.order), matching Odoo's own "Send RFQ"
+    behaviour so vendors see a consistent sender.
+
+    The final template also copies the buyer (user_id) so the internal
+    owner is aware the vendor has gone silent.
+
+    noupdate="1": preserves admin edits across module updates.
+-->
+<odoo>
+    <data noupdate="1">
+
+        <!-- Reminder 1: gentle follow-up -->
+        <record id="template_rfq_reminder_1" model="mail.template">
+            <field name="name">RFQ Follow-Up: Gentle Reminder</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="subject">Following up: Request for Quotation {{ object.name }}</field>
+            <field name="email_from">{{ (object.user_id.email_formatted or object.company_id.email_formatted or user.email_formatted) }}</field>
+            <field name="partner_to" eval="False"/>
+            <field name="use_default_to" eval="True"/>
+            <field name="description">Friendly first follow-up sent when a vendor has not yet answered a sent RFQ.</field>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Hello <t t-out="object.partner_id.name or ''">there</t>,
+        <br/><br/>
+        We recently sent you our Request for Quotation
+        <span style="font-weight: bold;" t-out="object.name or ''">P00001</span>
+        and wanted to follow up to see whether you have had a chance to review it.
+        <br/><br/>
+        We have not received your quotation yet. Could you share your pricing,
+        lead time and availability when convenient? Simply reply to this email
+        or get in touch with
+        <t t-out="object.user_id.name or object.company_id.name or ''"/>.
+        <br/><br/>
+        Thank you &#8212; we look forward to working with you.
+        <br/><br/>
+        Best regards,
+        <br/>
+        <t t-out="object.user_id.name or object.company_id.name or ''"/>
+    </p>
+</div>
+            </field>
+        </record>
+
+        <!-- Reminder 2: firm reminder -->
+        <record id="template_rfq_reminder_2" model="mail.template">
+            <field name="name">RFQ Follow-Up: Firm Reminder</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="subject">Reminder: quotation still pending for {{ object.name }}</field>
+            <field name="email_from">{{ (object.user_id.email_formatted or object.company_id.email_formatted or user.email_formatted) }}</field>
+            <field name="partner_to" eval="False"/>
+            <field name="use_default_to" eval="True"/>
+            <field name="description">Firmer reminder sent when a vendor still has not answered the RFQ.</field>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Hello <t t-out="object.partner_id.name or ''">there</t>,
+        <br/><br/>
+        We are still awaiting your response to our Request for Quotation
+        <span style="font-weight: bold;" t-out="object.name or ''">P00001</span>.
+        <br/><br/>
+        To keep this purchase on schedule, we would appreciate receiving your
+        quotation as soon as possible. If you are unable to quote, a quick note
+        letting us know would be very helpful.
+        <br/><br/>
+        Please reply to this email or contact
+        <t t-out="object.user_id.name or object.company_id.name or ''"/>.
+        <br/><br/>
+        Best regards,
+        <br/>
+        <t t-out="object.user_id.name or object.company_id.name or ''"/>
+    </p>
+</div>
+            </field>
+        </record>
+
+        <!-- Reminder 3: final notice (buyer copied in) -->
+        <record id="template_rfq_reminder_3" model="mail.template">
+            <field name="name">RFQ Follow-Up: Final Reminder</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="subject">Final reminder: response needed on RFQ {{ object.name }}</field>
+            <field name="email_from">{{ (object.user_id.email_formatted or object.company_id.email_formatted or user.email_formatted) }}</field>
+            <field name="email_cc">{{ object.user_id.email_formatted or '' }}</field>
+            <field name="partner_to" eval="False"/>
+            <field name="use_default_to" eval="True"/>
+            <field name="description">Final reminder sent when a vendor has gone silent; the buyer is copied in.</field>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Hello <t t-out="object.partner_id.name or ''">there</t>,
+        <br/><br/>
+        This is a final reminder regarding our Request for Quotation
+        <span style="font-weight: bold;" t-out="object.name or ''">P00001</span>,
+        which remains unanswered.
+        <br/><br/>
+        If we do not hear back from you shortly, we will need to source this
+        purchase elsewhere. We would much rather work with you &#8212; please
+        send your quotation, or let us know your situation, today.
+        <br/><br/>
+        Reply to this email or contact
+        <t t-out="object.user_id.name or object.company_id.name or ''"/>.
+        <br/><br/>
+        Best regards,
+        <br/>
+        <t t-out="object.user_id.name or object.company_id.name or ''"/>
+    </p>
+</div>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2026 Naim OUDAYET
+    License LGPL-3
+
+    Daily scheduled action that scans every Request for Quotation still in
+    the 'sent' state and dispatches the next due follow-up reminder.
+    Active by default. Admins can disable it under Settings > Technical >
+    Scheduled Actions, or change the interval (e.g. twice a day for very
+    short reminder offsets).
+
+    noupdate="1": once a customer adjusts the cadence we don't want a
+    module update to silently overwrite their preference.
+-->
+<odoo noupdate="1">
+    <record id="ir_cron_rfq_follow_up_reminder" model="ir.cron">
+        <field name="name">Purchase: Send RFQ follow-up reminders</field>
+        <field name="model_id" ref="purchase.model_purchase_order"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_send_rfq_reminders()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>

@@ -1,0 +1,356 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* no_rfq_follow_up
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 16:35+0000\n"
+"PO-Revision-Date: 2026-05-22 16:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: no_rfq_follow_up
+#: model:mail.template,body_html:no_rfq_follow_up.template_rfq_reminder_3
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Hello <t t-out=\"object.partner_id.name or ''\">there</t>,\n"
+"        <br/><br/>\n"
+"        This is a final reminder regarding our Request for Quotation\n"
+"        <span style=\"font-weight: bold;\" t-out=\"object.name or ''\">P00001</span>,\n"
+"        which remains unanswered.\n"
+"        <br/><br/>\n"
+"        If we do not hear back from you shortly, we will need to source this\n"
+"        purchase elsewhere. We would much rather work with you — please\n"
+"        send your quotation, or let us know your situation, today.\n"
+"        <br/><br/>\n"
+"        Reply to this email or contact\n"
+"        <t t-out=\"object.user_id.name or object.company_id.name or ''\"/>.\n"
+"        <br/><br/>\n"
+"        Best regards,\n"
+"        <br/>\n"
+"        <t t-out=\"object.user_id.name or object.company_id.name or ''\"/>\n"
+"    </p>\n"
+"</div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Guten Tag <t t-out=\"object.partner_id.name or ''\">there</t>,\n"
+"        <br/><br/>\n"
+"        dies ist eine letzte Erinnerung bezüglich unserer Angebotsanfrage\n"
+"        <span style=\"font-weight: bold;\" t-out=\"object.name or ''\">P00001</span>,\n"
+"        die bisher unbeantwortet geblieben ist.\n"
+"        <br/><br/>\n"
+"        Sollten wir in Kürze keine Rückmeldung von Ihnen erhalten, sind wir\n"
+"        leider gezwungen, diesen Einkauf anderweitig zu beschaffen. Wir würden\n"
+"        die Zusammenarbeit mit Ihnen bevorzugen — bitte senden Sie uns noch\n"
+"        heute Ihr Angebot oder teilen Sie uns Ihre Situation mit.\n"
+"        <br/><br/>\n"
+"        Antworten Sie auf diese E-Mail oder wenden Sie sich an\n"
+"        <t t-out=\"object.user_id.name or object.company_id.name or ''\"/>.\n"
+"        <br/><br/>\n"
+"        Mit freundlichen Grüßen,\n"
+"        <br/>\n"
+"        <t t-out=\"object.user_id.name or object.company_id.name or ''\"/>\n"
+"    </p>\n"
+"</div>\n"
+"            "
+
+#. module: no_rfq_follow_up
+#: model:mail.template,body_html:no_rfq_follow_up.template_rfq_reminder_2
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Hello <t t-out=\"object.partner_id.name or ''\">there</t>,\n"
+"        <br/><br/>\n"
+"        We are still awaiting your response to our Request for Quotation\n"
+"        <span style=\"font-weight: bold;\" t-out=\"object.name or ''\">P00001</span>.\n"
+"        <br/><br/>\n"
+"        To keep this purchase on schedule, we would appreciate receiving your\n"
+"        quotation as soon as possible. If you are unable to quote, a quick note\n"
+"        letting us know would be very helpful.\n"
+"        <br/><br/>\n"
+"        Please reply to this email or contact\n"
+"        <t t-out=\"object.user_id.name or object.company_id.name or ''\"/>.\n"
+"        <br/><br/>\n"
+"        Best regards,\n"
+"        <br/>\n"
+"        <t t-out=\"object.user_id.name or object.company_id.name or ''\"/>\n"
+"    </p>\n"
+"</div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Guten Tag <t t-out=\"object.partner_id.name or ''\">there</t>,\n"
+"        <br/><br/>\n"
+"        wir warten noch immer auf Ihre Antwort zu unserer Angebotsanfrage\n"
+"        <span style=\"font-weight: bold;\" t-out=\"object.name or ''\">P00001</span>.\n"
+"        <br/><br/>\n"
+"        Um diesen Einkauf termingerecht abwickeln zu können, würden wir uns\n"
+"        freuen, Ihr Angebot so bald wie möglich zu erhalten. Falls Sie kein\n"
+"        Angebot abgeben können, wäre eine kurze Mitteilung sehr hilfreich.\n"
+"        <br/><br/>\n"
+"        Bitte antworten Sie auf diese E-Mail oder wenden Sie sich an\n"
+"        <t t-out=\"object.user_id.name or object.company_id.name or ''\"/>.\n"
+"        <br/><br/>\n"
+"        Mit freundlichen Grüßen,\n"
+"        <br/>\n"
+"        <t t-out=\"object.user_id.name or object.company_id.name or ''\"/>\n"
+"    </p>\n"
+"</div>\n"
+"            "
+
+#. module: no_rfq_follow_up
+#: model:mail.template,body_html:no_rfq_follow_up.template_rfq_reminder_1
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Hello <t t-out=\"object.partner_id.name or ''\">there</t>,\n"
+"        <br/><br/>\n"
+"        We recently sent you our Request for Quotation\n"
+"        <span style=\"font-weight: bold;\" t-out=\"object.name or ''\">P00001</span>\n"
+"        and wanted to follow up to see whether you have had a chance to review it.\n"
+"        <br/><br/>\n"
+"        We have not received your quotation yet. Could you share your pricing,\n"
+"        lead time and availability when convenient? Simply reply to this email\n"
+"        or get in touch with\n"
+"        <t t-out=\"object.user_id.name or object.company_id.name or ''\"/>.\n"
+"        <br/><br/>\n"
+"        Thank you — we look forward to working with you.\n"
+"        <br/><br/>\n"
+"        Best regards,\n"
+"        <br/>\n"
+"        <t t-out=\"object.user_id.name or object.company_id.name or ''\"/>\n"
+"    </p>\n"
+"</div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Guten Tag <t t-out=\"object.partner_id.name or ''\">there</t>,\n"
+"        <br/><br/>\n"
+"        wir haben Ihnen kürzlich unsere Angebotsanfrage\n"
+"        <span style=\"font-weight: bold;\" t-out=\"object.name or ''\">P00001</span>\n"
+"        zugesandt und möchten nachfragen, ob Sie Gelegenheit hatten, diese zu prüfen.\n"
+"        <br/><br/>\n"
+"        Wir haben Ihr Angebot noch nicht erhalten. Könnten Sie uns bei Gelegenheit\n"
+"        Ihre Preise, Lieferzeiten und Verfügbarkeiten mitteilen? Antworten Sie\n"
+"        einfach auf diese E-Mail oder nehmen Sie Kontakt auf mit\n"
+"        <t t-out=\"object.user_id.name or object.company_id.name or ''\"/>.\n"
+"        <br/><br/>\n"
+"        Vielen Dank — wir freuen uns auf die Zusammenarbeit mit Ihnen.\n"
+"        <br/><br/>\n"
+"        Mit freundlichen Grüßen,\n"
+"        <br/>\n"
+"        <t t-out=\"object.user_id.name or object.company_id.name or ''\"/>\n"
+"    </p>\n"
+"</div>\n"
+"            "
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_enabled
+msgid "Auto-Chase Vendor"
+msgstr "Lieferant automatisch erinnern"
+
+#. module: no_rfq_follow_up
+#: model_terms:ir.ui.view,arch_db:no_rfq_follow_up.res_config_settings_view_form_rfq_follow_up
+msgid ""
+"Automatically email vendors an escalating reminder while a sent RFQ stays "
+"unanswered"
+msgstr ""
+"Lieferanten automatisch per E-Mail mit eskalierenden Erinnerungen kontaktieren,"
+" solange eine gesendete Angebotsanfrage unbeantwortet bleibt"
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_sent
+msgid ""
+"Comma-separated tokens marking which follow-up reminders have already fired "
+"for this RFQ (e.g. 'r1,r2'). Used by the daily cron to avoid sending the "
+"same reminder twice."
+msgstr ""
+"Durch Komma getrennte Token, die angeben, welche Nachfass-Erinnerungen für "
+"diese Angebotsanfrage bereits versendet wurden (z. B. 'r1,r2'). Wird vom "
+"täglichen geplanten Vorgang verwendet, um das doppelte Versenden derselben "
+"Erinnerung zu verhindern."
+
+#. module: no_rfq_follow_up
+#: model:ir.model,name:no_rfq_follow_up.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfigurationseinstellungen"
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_3
+msgid ""
+"Days after an RFQ is sent before the final follow-up email is sent, with the"
+" buyer copied in. Should be larger than the second reminder."
+msgstr ""
+"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die abschließende"
+" Nachfass-E-Mail versendet wird – dabei wird der Einkäufer in Kopie gesetzt."
+" Dieser Wert sollte größer sein als der der zweiten Erinnerung."
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_1
+msgid ""
+"Days after an RFQ is sent before the first (gentle) follow-up email is sent "
+"to the vendor."
+msgstr ""
+"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die erste"
+" (freundliche) Nachfass-E-Mail an den Lieferanten versendet wird."
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_2
+msgid ""
+"Days after an RFQ is sent before the second (firm) follow-up email is sent. "
+"Should be larger than the first reminder."
+msgstr ""
+"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die zweite"
+" (bestimmtere) Nachfass-E-Mail versendet wird. Dieser Wert sollte größer"
+" sein als der der ersten Erinnerung."
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__display_name
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_3
+msgid "Final Reminder (days after sent)"
+msgstr "Letzte Erinnerung (Tage nach Versand)"
+
+#. module: no_rfq_follow_up
+#: model:mail.template,description:no_rfq_follow_up.template_rfq_reminder_3
+msgid ""
+"Final reminder sent when a vendor has gone silent; the buyer is copied in."
+msgstr ""
+"Letzte Erinnerung, die versendet wird, wenn ein Lieferant nicht mehr"
+" reagiert; der Einkäufer wird in Kopie gesetzt."
+
+#. module: no_rfq_follow_up
+#: model:mail.template,subject:no_rfq_follow_up.template_rfq_reminder_3
+msgid "Final reminder: response needed on RFQ {{ object.name }}"
+msgstr "Letzte Erinnerung: Antwort zur Angebotsanfrage {{ object.name }} erforderlich"
+
+#. module: no_rfq_follow_up
+#: model:mail.template,description:no_rfq_follow_up.template_rfq_reminder_2
+msgid "Firmer reminder sent when a vendor still has not answered the RFQ."
+msgstr "Bestimmtere Erinnerung, die versendet wird, wenn ein Lieferant die Angebotsanfrage noch immer nicht beantwortet hat."
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_1
+msgid "First Reminder (days after sent)"
+msgstr "Erste Erinnerung (Tage nach Versand)"
+
+#. module: no_rfq_follow_up
+#: model:mail.template,subject:no_rfq_follow_up.template_rfq_reminder_1
+msgid "Following up: Request for Quotation {{ object.name }}"
+msgstr "Nachfrage: Angebotsanfrage {{ object.name }}"
+
+#. module: no_rfq_follow_up
+#: model:mail.template,description:no_rfq_follow_up.template_rfq_reminder_1
+msgid ""
+"Friendly first follow-up sent when a vendor has not yet answered a sent RFQ."
+msgstr ""
+"Freundliche erste Nachfass-E-Mail, die versendet wird, wenn ein Lieferant"
+" eine gesendete Angebotsanfrage noch nicht beantwortet hat."
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__id
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__id
+msgid "ID"
+msgstr "ID"
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_count
+msgid ""
+"Number of follow-up reminder emails already sent to the vendor for this RFQ."
+msgstr ""
+"Anzahl der bereits an den Lieferanten gesendeten Nachfass-Erinnerungs-E-Mails"
+" für diese Angebotsanfrage."
+
+#. module: no_rfq_follow_up
+#: model:ir.model,name:no_rfq_follow_up.model_purchase_order
+msgid "Purchase Order"
+msgstr "Bestellung"
+
+#. module: no_rfq_follow_up
+#: model:ir.actions.server,name:no_rfq_follow_up.ir_cron_rfq_follow_up_reminder_ir_actions_server
+msgid "Purchase: Send RFQ follow-up reminders"
+msgstr "Einkauf: Nachfass-Erinnerungen für Angebotsanfragen versenden"
+
+#. module: no_rfq_follow_up
+#: model_terms:ir.ui.view,arch_db:no_rfq_follow_up.res_config_settings_view_form_rfq_follow_up
+msgid "RFQ Follow-Up Reminders"
+msgstr "Nachfass-Erinnerungen für Angebotsanfragen"
+
+#. module: no_rfq_follow_up
+#: model:mail.template,name:no_rfq_follow_up.template_rfq_reminder_3
+msgid "RFQ Follow-Up: Final Reminder"
+msgstr "Angebotsanfrage Nachfass: Letzte Erinnerung"
+
+#. module: no_rfq_follow_up
+#: model:mail.template,name:no_rfq_follow_up.template_rfq_reminder_2
+msgid "RFQ Follow-Up: Firm Reminder"
+msgstr "Angebotsanfrage Nachfass: Bestimmte Erinnerung"
+
+#. module: no_rfq_follow_up
+#: model:mail.template,name:no_rfq_follow_up.template_rfq_reminder_1
+msgid "RFQ Follow-Up: Gentle Reminder"
+msgstr "Angebotsanfrage Nachfass: Freundliche Erinnerung"
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_sent
+msgid "RFQ Reminders Sent"
+msgstr "Gesendete Angebotsanfrage-Erinnerungen"
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__x_rfq_sent_date
+msgid "RFQ Sent On"
+msgstr "Angebotsanfrage versendet am"
+
+#. module: no_rfq_follow_up
+#: model:mail.template,subject:no_rfq_follow_up.template_rfq_reminder_2
+msgid "Reminder: quotation still pending for {{ object.name }}"
+msgstr "Erinnerung: Angebot noch ausstehend für {{ object.name }}"
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_count
+msgid "Reminders Sent"
+msgstr "Versendete Erinnerungen"
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_2
+msgid "Second Reminder (days after sent)"
+msgstr "Zweite Erinnerung (Tage nach Versand)"
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_enabled
+msgid ""
+"When enabled, the daily scheduled action emails the vendor an escalating "
+"follow-up reminder while this RFQ stays unanswered. Untick to stop chasing "
+"this particular RFQ."
+msgstr ""
+"Wenn aktiviert, sendet der tägliche geplante Vorgang dem Lieferanten"
+" eskalierende Nachfass-Erinnerungen, solange diese Angebotsanfrage"
+" unbeantwortet bleibt. Deaktivieren Sie diese Option, um die Nachverfolgung"
+" dieser bestimmten Angebotsanfrage zu beenden."
+
+#. module: no_rfq_follow_up
+#: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_sent_date
+msgid ""
+"When this Request for Quotation was first sent to the vendor. Stamped "
+"automatically on the draft -> sent transition and used as the anchor for the"
+" follow-up reminder schedule."
+msgstr ""
+"Zeitpunkt, zu dem diese Angebotsanfrage erstmals an den Lieferanten versendet"
+" wurde. Wird automatisch beim Übergang von Entwurf zu Versendet gesetzt und"
+" dient als Ausgangspunkt für den Zeitplan der Nachfass-Erinnerungen."
