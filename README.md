@@ -1,5 +1,9 @@
 # RFQ Follow-Up Reminder
 
+![License](https://img.shields.io/badge/license-LGPL--3-blue)
+![Odoo](https://img.shields.io/badge/Odoo-19.0-blueviolet)
+![Languages](https://img.shields.io/badge/languages-9-orange)
+
 Automatically chase vendors who never answered your Request for Quotation. A daily scheduled action emails the vendor an escalating sequence of reminders — gentle, firm, then final — while the RFQ stays unanswered. Configurable cadence, editable templates, no JavaScript.
 
 ## Why
