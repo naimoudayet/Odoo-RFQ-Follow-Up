@@ -44,6 +44,20 @@ class TestRfqFollowUp(TransactionCase):
             "type": "consu",
             "list_price": 50.0,
         })
+        # On v18, --test-enable marks the mocked send "sent" and auto_delete
+        # then unlinks the mail.mail before the asserts count it. Disable
+        # auto_delete on the module templates so the rows persist for the
+        # asserts (the shipped templates keep auto_delete=True).
+        for _xmlid in (
+            "template_rfq_reminder_1",
+            "template_rfq_reminder_2",
+            "template_rfq_reminder_3",
+        ):
+            _tmpl = cls.env.ref(
+                "no_rfq_follow_up.%s" % _xmlid, raise_if_not_found=False
+            )
+            if _tmpl:
+                _tmpl.auto_delete = False
 
     def _make_rfq(self, sent_days_ago=None, state="sent", enabled=True):
         """Create a purchase.order and move it into `state`.

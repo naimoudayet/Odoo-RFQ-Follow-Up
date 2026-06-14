@@ -1,15 +1,15 @@
 # RFQ Follow-Up Reminder
 
 ![License](https://img.shields.io/badge/license-LGPL--3-blue)
-![Odoo](https://img.shields.io/badge/Odoo-19.0-blueviolet)
+![Odoo](https://img.shields.io/badge/Odoo-18.0-blueviolet)
 ![Languages](https://img.shields.io/badge/languages-9-orange)
-![Version](https://img.shields.io/badge/version-19.0.1.0.0-informational)
+![Version](https://img.shields.io/badge/version-18.0.1.0.0-informational)
 
 Automatically chase vendors who never answered your Request for Quotation. A daily scheduled action emails the vendor an escalating sequence of reminders — gentle, firm, then final — while the RFQ stays unanswered. Configurable cadence, editable templates, no JavaScript.
 
 ## Why
 
-Odoo 19 ships a vendor reminder mechanism, but it only chases the **receipt date** of already-confirmed purchase orders (`_send_reminder_mail` runs on `state == 'purchase'` with `acknowledged == False`). Nothing chases a vendor who has simply never replied to a Request for Quotation sitting in `state == 'sent'`. Buyers track those by hand. This module closes that gap with a daily cron and three editable `mail.template` records.
+Odoo 18 ships a vendor reminder mechanism, but it only chases the **receipt date** of already-confirmed purchase orders (`_send_reminder_mail` runs on `state == 'purchase'` with `acknowledged == False`). Nothing chases a vendor who has simply never replied to a Request for Quotation sitting in `state == 'sent'`. Buyers track those by hand. This module closes that gap with a daily cron and three editable `mail.template` records.
 
 ## Features
 
@@ -34,8 +34,8 @@ Odoo 19 ships a vendor reminder mechanism, but it only chases the **receipt date
 
 | Field            | Value                                                  |
 |------------------|--------------------------------------------------------|
-| Module Version   | 19.0.1.0.0                                             |
-| Odoo Version     | 19.0 Community + Enterprise                            |
+| Module Version   | 18.0.1.0.0                                             |
+| Odoo Version     | 18.0 Community + Enterprise                            |
 | License          | LGPL-3                                                 |
 | Dependencies     | `purchase`                                             |
 | Python Deps      | none                                                   |
@@ -103,7 +103,7 @@ Each user sees the emails and form labels in the language set in **Preferences -
 
 ## Compatibility
 
-- Odoo 19.0 Community + Enterprise
+- Odoo 18.0 Community + Enterprise
 
 ## Author
 

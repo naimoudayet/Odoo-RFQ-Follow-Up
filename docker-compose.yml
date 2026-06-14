@@ -1,9 +1,9 @@
-name: rfqfollowup-19
+name: rfqfollowup-18
 
 services:
   db:
     image: postgres:16
-    container_name: rfqfollowup-pg-19
+    container_name: rfqfollowup-pg-18
     environment:
       POSTGRES_USER: odoo
       POSTGRES_PASSWORD: odoo
@@ -13,11 +13,11 @@ services:
 
   odoo:
     build: .
-    container_name: rfqfollowup-odoo-19
+    container_name: rfqfollowup-odoo-18
     depends_on:
       - db
     ports:
-      - "13447:8069"
+      - "18447:8069"
     environment:
       HOST: db
       USER: odoo
