@@ -10,10 +10,10 @@ msgstr ""
 "PO-Revision-Date: 2026-05-22 16:35+0000\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese (Brazil)\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: no_rfq_follow_up
@@ -186,7 +186,7 @@ msgid "Config Settings"
 msgstr "Definições de configuração"
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_3
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_3
 msgid ""
 "Days after an RFQ is sent before the final follow-up email is sent, with the"
 " buyer copied in. Should be larger than the second reminder."
@@ -196,7 +196,7 @@ msgstr ""
 "que o intervalo do segundo lembrete."
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_1
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
 msgid ""
 "Days after an RFQ is sent before the first (gentle) follow-up email is sent "
 "to the vendor."
@@ -205,7 +205,7 @@ msgstr ""
 "primeiro e-mail de acompanhamento (gentil) ao fornecedor."
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_2
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
 msgid ""
 "Days after an RFQ is sent before the second (firm) follow-up email is sent. "
 "Should be larger than the first reminder."
@@ -221,7 +221,7 @@ msgid "Display Name"
 msgstr "Nome exibido"
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_3
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_3
 msgid "Final Reminder (days after sent)"
 msgstr "Lembrete Final (dias após o envio)"
 
@@ -246,7 +246,7 @@ msgstr ""
 "solicitação de cotação."
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_1
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
 msgid "First Reminder (days after sent)"
 msgstr "Primeiro Lembrete (dias após o envio)"
 
@@ -328,7 +328,7 @@ msgid "Reminders Sent"
 msgstr "Lembretes Enviados"
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_2
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
 msgid "Second Reminder (days after sent)"
 msgstr "Segundo Lembrete (dias após o envio)"
 
