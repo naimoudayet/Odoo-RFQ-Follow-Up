@@ -3,6 +3,14 @@
 All notable changes to **RFQ Follow-Up Reminder** are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [19.0.1.1.0]
+
+### Changed
+
+- Settings fields now carry the `x_` prefix (`x_rfq_reminder_offset_1/2/3`) per
+  ODOO_GUIDELINES 6. The `ir.config_parameter` keys are unchanged, so an existing
+  installation keeps its configured cadence.
+
 ## [19.0.1.0.0] - 2026-05-22
 
 ### Added

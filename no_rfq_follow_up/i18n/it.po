@@ -10,10 +10,10 @@ msgstr ""
 "PO-Revision-Date: 2026-05-22 16:35+0000\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: no_rfq_follow_up
@@ -186,7 +186,7 @@ msgid "Config Settings"
 msgstr "Impostazioni di configurazione"
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_3
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_3
 msgid ""
 "Days after an RFQ is sent before the final follow-up email is sent, with the"
 " buyer copied in. Should be larger than the second reminder."
@@ -195,7 +195,7 @@ msgstr ""
 "sollecito finale, con copia all'acquirente. Deve essere superiore al secondo sollecito."
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_1
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
 msgid ""
 "Days after an RFQ is sent before the first (gentle) follow-up email is sent "
 "to the vendor."
@@ -204,7 +204,7 @@ msgstr ""
 "sollecito (gentile) al fornitore."
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_2
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
 msgid ""
 "Days after an RFQ is sent before the second (firm) follow-up email is sent. "
 "Should be larger than the first reminder."
@@ -219,7 +219,7 @@ msgid "Display Name"
 msgstr "Nome visualizzato"
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_3
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_3
 msgid "Final Reminder (days after sent)"
 msgstr "Sollecito finale (giorni dall'invio)"
 
@@ -241,7 +241,7 @@ msgid "Firmer reminder sent when a vendor still has not answered the RFQ."
 msgstr "Sollecito deciso inviato quando un fornitore non ha ancora risposto alla richiesta di offerta."
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_1
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
 msgid "First Reminder (days after sent)"
 msgstr "Primo sollecito (giorni dall'invio)"
 
@@ -321,7 +321,7 @@ msgid "Reminders Sent"
 msgstr "Solleciti inviati"
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_2
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
 msgid "Second Reminder (days after sent)"
 msgstr "Secondo sollecito (giorni dall'invio)"
 

@@ -118,21 +118,21 @@ msgid "Config Settings"
 msgstr ""
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_3
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_3
 msgid ""
 "Days after an RFQ is sent before the final follow-up email is sent, with the"
 " buyer copied in. Should be larger than the second reminder."
 msgstr ""
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_1
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
 msgid ""
 "Days after an RFQ is sent before the first (gentle) follow-up email is sent "
 "to the vendor."
 msgstr ""
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_2
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
 msgid ""
 "Days after an RFQ is sent before the second (firm) follow-up email is sent. "
 "Should be larger than the first reminder."
@@ -145,7 +145,7 @@ msgid "Display Name"
 msgstr ""
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_3
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_3
 msgid "Final Reminder (days after sent)"
 msgstr ""
 
@@ -166,7 +166,7 @@ msgid "Firmer reminder sent when a vendor still has not answered the RFQ."
 msgstr ""
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_1
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
 msgid "First Reminder (days after sent)"
 msgstr ""
 
@@ -244,7 +244,7 @@ msgid "Reminders Sent"
 msgstr ""
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_2
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
 msgid "Second Reminder (days after sent)"
 msgstr ""
 

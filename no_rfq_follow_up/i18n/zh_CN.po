@@ -10,10 +10,10 @@ msgstr ""
 "PO-Revision-Date: 2026-05-22 16:35+0000\n"
 "Last-Translator: \n"
 "Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: no_rfq_follow_up
@@ -183,7 +183,7 @@ msgid "Config Settings"
 msgstr "配置设置"
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_3
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_3
 msgid ""
 "Days after an RFQ is sent before the final follow-up email is sent, with the"
 " buyer copied in. Should be larger than the second reminder."
@@ -192,14 +192,14 @@ msgstr ""
 "该值应大于第二次提醒的间隔天数。"
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_1
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
 msgid ""
 "Days after an RFQ is sent before the first (gentle) follow-up email is sent "
 "to the vendor."
 msgstr "询价单发出后，向供应商发送第一封（温和）跟进邮件所需等待的天数。"
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_2
+#: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
 msgid ""
 "Days after an RFQ is sent before the second (firm) follow-up email is sent. "
 "Should be larger than the first reminder."
@@ -214,7 +214,7 @@ msgid "Display Name"
 msgstr "显示名称"
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_3
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_3
 msgid "Final Reminder (days after sent)"
 msgstr "最终提醒（发送后天数）"
 
@@ -235,7 +235,7 @@ msgid "Firmer reminder sent when a vendor still has not answered the RFQ."
 msgstr "当供应商仍未回复询价单时发送的正式提醒邮件。"
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_1
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
 msgid "First Reminder (days after sent)"
 msgstr "第一次提醒（发送后天数）"
 
@@ -313,7 +313,7 @@ msgid "Reminders Sent"
 msgstr "已发送提醒次数"
 
 #. module: no_rfq_follow_up
-#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__rfq_reminder_offset_2
+#: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
 msgid "Second Reminder (days after sent)"
 msgstr "第二次提醒（发送后天数）"
 
