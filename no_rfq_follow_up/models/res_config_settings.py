@@ -14,21 +14,21 @@ from odoo import fields, models
 class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
-    rfq_reminder_offset_1 = fields.Integer(
+    x_rfq_reminder_offset_1 = fields.Integer(
         string="First Reminder (days after sent)",
         default=3,
         config_parameter="no_rfq_follow_up.offset_1",
         help="Days after an RFQ is sent before the first (gentle) follow-up "
              "email is sent to the vendor.",
     )
-    rfq_reminder_offset_2 = fields.Integer(
+    x_rfq_reminder_offset_2 = fields.Integer(
         string="Second Reminder (days after sent)",
         default=7,
         config_parameter="no_rfq_follow_up.offset_2",
         help="Days after an RFQ is sent before the second (firm) follow-up "
              "email is sent. Should be larger than the first reminder.",
     )
-    rfq_reminder_offset_3 = fields.Integer(
+    x_rfq_reminder_offset_3 = fields.Integer(
         string="Final Reminder (days after sent)",
         default=14,
         config_parameter="no_rfq_follow_up.offset_3",
