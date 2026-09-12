@@ -18,16 +18,16 @@
                          help="Automatically email vendors an escalating reminder while a sent RFQ stays unanswered">
                     <div class="content-group">
                         <div class="row mt8">
-                            <label for="rfq_reminder_offset_1" class="col-lg-7 o_light_label"/>
-                            <field name="rfq_reminder_offset_1"/>
+                            <label for="x_rfq_reminder_offset_1" class="col-lg-7 o_light_label"/>
+                            <field name="x_rfq_reminder_offset_1"/>
                         </div>
                         <div class="row">
-                            <label for="rfq_reminder_offset_2" class="col-lg-7 o_light_label"/>
-                            <field name="rfq_reminder_offset_2"/>
+                            <label for="x_rfq_reminder_offset_2" class="col-lg-7 o_light_label"/>
+                            <field name="x_rfq_reminder_offset_2"/>
                         </div>
                         <div class="row">
-                            <label for="rfq_reminder_offset_3" class="col-lg-7 o_light_label"/>
-                            <field name="rfq_reminder_offset_3"/>
+                            <label for="x_rfq_reminder_offset_3" class="col-lg-7 o_light_label"/>
+                            <field name="x_rfq_reminder_offset_3"/>
                         </div>
                     </div>
                 </setting>

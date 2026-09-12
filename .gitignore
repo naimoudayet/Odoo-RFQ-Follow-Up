@@ -14,3 +14,6 @@ htmlcov/
 .DS_Store
 Thumbs.db
 CLAUDE.md
+
+# Agent notes are local-only (ODOO_GUIDELINES 11).
+.claude/
