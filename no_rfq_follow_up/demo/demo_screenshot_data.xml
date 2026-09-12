@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Screenshot-ready demo data for no_rfq_follow_up.
+
+    Loads six RFQs covering every state the App Store screenshots need:
+      - One freshly sent (no chase yet)
+      - One that the cron should bump to T1 on its next run
+      - One that already received T1 and is due for T2
+      - One that already received T1+T2 and is due for T3
+      - One that has burned through all three tiers (chase exhausted)
+      - One that is in-window for chasing but has been muted via the
+        "Auto-Chase Vendor" toggle, to demonstrate the opt-out path
+
+    After installing the module with demo data, run the scheduled action
+    "Purchasing: Send RFQ follow-up reminders" once. The cron will:
+      * skip the freshly sent RFQ (too young)
+      * fire T1 on the 4-day-old RFQ
+      * fire T2 on the 8-day-old RFQ that already had T1 consumed
+      * fire T3 on the 15-day-old RFQ that already had T1+T2 consumed
+      * leave the all-tiers-sent RFQ alone (nothing left to escalate)
+      * leave the opted-out RFQ alone
+
+    Every RFQ has a non-trivial product line so the form view + email
+    body render with real numbers, not placeholders.
+
+    Copyright 2026 Naim OUDAYET
+    License LGPL-3
+-->
+<odoo>
+    <data noupdate="1">
+
+        <!-- =====================================================
+             Vendors (three new ones + two existing base partners)
+             ===================================================== -->
+        <record id="demo_vendor_aurora_studio" model="res.partner">
+            <field name="name">Aurora Furniture Studio</field>
+            <field name="is_company">1</field>
+            <field name="supplier_rank">1</field>
+            <field name="customer_rank">0</field>
+            <field name="email">orders@aurora-furniture.example.com</field>
+            <field name="phone">+39 02 5511 4422</field>
+            <field name="street">Via dei Mille 14</field>
+            <field name="city">Milano</field>
+            <field name="zip">20131</field>
+            <field name="country_id" ref="base.it"/>
+            <field name="lang">en_US</field>
+            <field name="website">https://aurora-furniture.example.com</field>
+        </record>
+
+        <record id="demo_vendor_bjornsson_steel" model="res.partner">
+            <field name="name">Björnsson Steel Works</field>
+            <field name="is_company">1</field>
+            <field name="supplier_rank">1</field>
+            <field name="customer_rank">0</field>
+            <field name="email">rfq@bjornsson-steel.example.com</field>
+            <field name="phone">+46 8 555 0142</field>
+            <field name="street">Industrigatan 7</field>
+            <field name="city">Stockholm</field>
+            <field name="zip">11521</field>
+            <field name="country_id" ref="base.se"/>
+            <field name="lang">en_US</field>
+            <field name="website">https://bjornsson-steel.example.com</field>
+        </record>
+
+        <record id="demo_vendor_almaria_trading" model="res.partner">
+            <field name="name">Almaria Trading SL</field>
+            <field name="is_company">1</field>
+            <field name="supplier_rank">1</field>
+            <field name="customer_rank">0</field>
+            <field name="email">ventas@almaria-trading.example.com</field>
+            <field name="phone">+34 91 555 7788</field>
+            <field name="street">Calle de Velázquez 22</field>
+            <field name="city">Madrid</field>
+            <field name="zip">28001</field>
+            <field name="country_id" ref="base.es"/>
+            <field name="lang">en_US</field>
+            <field name="website">https://almaria-trading.example.com</field>
+        </record>
+
+        <!-- =====================================================
+             RFQ #1 - freshly sent, 1 day old, no chase yet
+             Demonstrates the "all good" state in the list view.
+             ===================================================== -->
+        <record id="demo_rfq_01_fresh" model="purchase.order">
+            <field name="partner_id" ref="demo_vendor_aurora_studio"/>
+            <field name="state">sent</field>
+            <field name="x_rfq_sent_date"
+                   eval="(DateTime.now() - relativedelta(days=1, hours=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="x_rfq_reminder_sent"></field>
+            <field name="x_rfq_reminder_enabled" eval="True"/>
+            <field name="order_line"
+                   eval="[(0, 0, {
+                       'product_id': ref('product.product_delivery_01'),
+                       'product_qty': 12,
+                       'price_unit': 78.50,
+                       'name': 'Office Chair - ergonomic, fabric',
+                   })]"/>
+        </record>
+
+        <!-- =====================================================
+             RFQ #2 - 4 days old, no tokens consumed
+             Cron will fire reminder T1 on this one.
+             ===================================================== -->
+        <record id="demo_rfq_02_due_t1" model="purchase.order">
+            <field name="partner_id" ref="demo_vendor_aurora_studio"/>
+            <field name="state">sent</field>
+            <field name="x_rfq_sent_date"
+                   eval="(DateTime.now() - relativedelta(days=4, hours=3)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="x_rfq_reminder_sent"></field>
+            <field name="x_rfq_reminder_enabled" eval="True"/>
+            <field name="order_line"
+                   eval="[(0, 0, {
+                       'product_id': ref('product.product_product_25'),
+                       'product_qty': 6,
+                       'price_unit': 295.00,
+                       'name': 'Acoustic Bloc Screens - 1600x1200',
+                   })]"/>
+        </record>
+
+        <!-- =====================================================
+             RFQ #3 - 8 days old, T1 consumed
+             Cron will fire reminder T2 on this one.
+             ===================================================== -->
+        <record id="demo_rfq_03_due_t2" model="purchase.order">
+            <field name="partner_id" ref="base.res_partner_4"/>
+            <field name="state">sent</field>
+            <field name="x_rfq_sent_date"
+                   eval="(DateTime.now() - relativedelta(days=8, hours=5)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="x_rfq_reminder_sent">r1</field>
+            <field name="x_rfq_reminder_enabled" eval="True"/>
+            <field name="order_line"
+                   eval="[(0, 0, {
+                       'product_id': ref('product.product_delivery_02'),
+                       'product_qty': 24,
+                       'price_unit': 49.00,
+                       'name': 'Office Lamp - LED desk',
+                   })]"/>
+        </record>
+
+        <!-- =====================================================
+             RFQ #4 - 15 days old, T1 + T2 consumed
+             Cron will fire reminder T3 (final notice) on this one.
+             ===================================================== -->
+        <record id="demo_rfq_04_due_t3" model="purchase.order">
+            <field name="partner_id" ref="base.res_partner_3"/>
+            <field name="state">sent</field>
+            <field name="x_rfq_sent_date"
+                   eval="(DateTime.now() - relativedelta(days=15, hours=8)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="x_rfq_reminder_sent">r1,r2</field>
+            <field name="x_rfq_reminder_enabled" eval="True"/>
+            <field name="order_line"
+                   eval="[(0, 0, {
+                       'product_id': ref('product.product_product_7'),
+                       'product_qty': 40,
+                       'price_unit': 18.75,
+                       'name': 'Storage Box - reinforced cardboard',
+                   })]"/>
+        </record>
+
+        <!-- =====================================================
+             RFQ #5 - 22 days old, all three tiers consumed
+             Chase is exhausted; nothing left for the cron to do.
+             Useful to show the "Reminders Sent = 3" Group By count.
+             ===================================================== -->
+        <record id="demo_rfq_05_chase_exhausted" model="purchase.order">
+            <field name="partner_id" ref="demo_vendor_bjornsson_steel"/>
+            <field name="state">sent</field>
+            <field name="x_rfq_sent_date"
+                   eval="(DateTime.now() - relativedelta(days=22, hours=11)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="x_rfq_reminder_sent">r1,r2,r3</field>
+            <field name="x_rfq_reminder_enabled" eval="True"/>
+            <field name="order_line"
+                   eval="[(0, 0, {
+                       'product_id': ref('product.product_order_01'),
+                       'product_qty': 1,
+                       'price_unit': 2450.00,
+                       'name': 'Office Design Software - annual license',
+                   })]"/>
+        </record>
+
+        <!-- =====================================================
+             RFQ #6 - 4 days old, but auto-chase explicitly OFF
+             Demonstrates the per-RFQ opt-out: the cron skips it
+             even though it is overdue. Pairs nicely with the
+             "Auto-Chase Vendor" filter screenshot.
+             ===================================================== -->
+        <record id="demo_rfq_06_opted_out" model="purchase.order">
+            <field name="partner_id" ref="demo_vendor_almaria_trading"/>
+            <field name="state">sent</field>
+            <field name="x_rfq_sent_date"
+                   eval="(DateTime.now() - relativedelta(days=4, hours=1)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="x_rfq_reminder_sent"></field>
+            <field name="x_rfq_reminder_enabled" eval="False"/>
+            <field name="order_line"
+                   eval="[(0, 0, {
+                       'product_id': ref('product.product_product_4'),
+                       'product_qty': 4,
+                       'price_unit': 425.00,
+                       'name': 'Customizable Desk - 180x80, oak',
+                   })]"/>
+        </record>
+
+    </data>
+</odoo>
