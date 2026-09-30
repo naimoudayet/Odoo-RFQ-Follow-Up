@@ -1,7 +1,7 @@
 # RFQ Follow-Up Reminder
 
 ![License](https://img.shields.io/badge/license-LGPL--3-blue)
-![Odoo](https://img.shields.io/badge/Odoo-18.0%20%7C%2019.0-blueviolet)
+![Odoo](https://img.shields.io/badge/Odoo-18.0%20%7C%2019.0%20%7C%2020.0-blueviolet)
 ![Languages](https://img.shields.io/badge/languages-9-orange)
 
 **Author: Naim OUDAYET**
@@ -12,6 +12,8 @@ Automatically chase vendors who never answered your Request for Quotation. A dai
 
 | Branch       | Purpose                                                              |
 |--------------|----------------------------------------------------------------------|
+| `20.0`       | **App Store branch, Odoo 20.** Addon-only, drops into `addons_path`.  |
+| `20.0-dev`   | Development branch for the Odoo 20 series.                            |
 | `19.0`       | **App Store branch, Odoo 19.** Addon-only, drops into `addons_path`.  |
 | `19.0-dev`   | Development branch with Dockerfile, demo stack, manual-test scenarios.|
 | `18.0`       | **App Store branch, Odoo 18.** Same module, backported.               |
