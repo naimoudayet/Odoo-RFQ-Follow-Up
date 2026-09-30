@@ -34,9 +34,6 @@
         "views/purchase_order_views.xml",
         "views/res_config_settings_views.xml",
     ],
-    "demo": [
-        "demo/demo_screenshot_data.xml",
-    ],
     "images": [
         "static/description/banner.png",
     ],
