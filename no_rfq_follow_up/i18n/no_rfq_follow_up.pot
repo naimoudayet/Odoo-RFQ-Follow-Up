@@ -6,14 +6,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 20.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-30 11:57+0000\n"
-"PO-Revision-Date: 2026-09-30 11:57+0000\n"
+"POT-Creation-Date: 2026-09-30 12:11+0000\n"
+"PO-Revision-Date: 2026-09-30 12:11+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "%(reminder)s emailed to %(vendor)s: %(subject)s"
+msgstr ""
 
 #. module: no_rfq_follow_up
 #: model:mail.template,body_html:no_rfq_follow_up.template_rfq_reminder_3
@@ -157,6 +163,12 @@ msgid "Final Reminder (days after sent)"
 msgstr ""
 
 #. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "Final reminder"
+msgstr ""
+
+#. module: no_rfq_follow_up
 #: model:mail.template,description:no_rfq_follow_up.template_rfq_reminder_3
 msgid ""
 "Final reminder sent when a vendor has gone silent; the buyer is copied in."
@@ -175,6 +187,12 @@ msgstr ""
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
 msgid "First Reminder (days after sent)"
+msgstr ""
+
+#. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "First follow-up reminder"
 msgstr ""
 
 #. module: no_rfq_follow_up
@@ -274,6 +292,12 @@ msgstr ""
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
 msgid "Second Reminder (days after sent)"
+msgstr ""
+
+#. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "Second follow-up reminder"
 msgstr ""
 
 #. module: no_rfq_follow_up

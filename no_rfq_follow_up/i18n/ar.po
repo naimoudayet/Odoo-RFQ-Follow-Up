@@ -17,6 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 
 #. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "%(reminder)s emailed to %(vendor)s: %(subject)s"
+msgstr "تم إرسال %(reminder)s بالبريد إلى %(vendor)s: %(subject)s"
+
+#. module: no_rfq_follow_up
 #: model:mail.template,body_html:no_rfq_follow_up.template_rfq_reminder_3
 msgid ""
 "<div style=\"margin: 0px; padding: 0px;\">\n"
@@ -233,6 +239,12 @@ msgid "Final Reminder (days after sent)"
 msgstr "التذكير النهائي (عدد الأيام بعد الإرسال)"
 
 #. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "Final reminder"
+msgstr "التذكير النهائي"
+
+#. module: no_rfq_follow_up
 #: model:mail.template,description:no_rfq_follow_up.template_rfq_reminder_3
 msgid ""
 "Final reminder sent when a vendor has gone silent; the buyer is copied in."
@@ -254,6 +266,12 @@ msgstr "تذكير حازم يُرسَل عندما لا يزال المورد �
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
 msgid "First Reminder (days after sent)"
 msgstr "التذكير الأول (عدد الأيام بعد الإرسال)"
+
+#. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "First follow-up reminder"
+msgstr "تذكير المتابعة الأول"
 
 #. module: no_rfq_follow_up
 #: model:mail.template,subject:no_rfq_follow_up.template_rfq_reminder_1
@@ -365,6 +383,12 @@ msgstr "التذكيرات المُرسَلة"
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
 msgid "Second Reminder (days after sent)"
 msgstr "التذكير الثاني (عدد الأيام بعد الإرسال)"
+
+#. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "Second follow-up reminder"
+msgstr "تذكير المتابعة الثاني"
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_enabled
