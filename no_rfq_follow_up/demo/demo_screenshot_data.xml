@@ -26,8 +26,7 @@
     Copyright 2026 Naim OUDAYET
     License LGPL-3
 -->
-<odoo>
-    <data noupdate="1">
+<odoo noupdate="1">
 
         <!-- =====================================================
              Vendors (three new ones + two existing base partners)
@@ -200,5 +199,4 @@
                    })]"/>
         </record>
 
-    </data>
 </odoo>
