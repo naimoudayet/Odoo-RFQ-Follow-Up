@@ -246,3 +246,16 @@ class TestRfqFollowUp(TransactionCase):
         self.env["res.config.settings"].create({"x_rfq_reminder_offset_1": 2}).execute()
         self.PurchaseOrder._cron_send_rfq_reminders()
         self.assertIn("r1", order.x_rfq_reminder_sent or "")
+
+    def test_reminder_is_logged_on_the_rfq(self):
+        """Each sent reminder leaves a note in the RFQ chatter naming the
+        reminder, the vendor and the subject."""
+        order = self._make_rfq(sent_days_ago=3)
+        before = order.message_ids
+        self.PurchaseOrder._cron_send_rfq_reminders()
+        notes = (order.message_ids - before).filtered(
+            lambda m: "First follow-up reminder" in (m.body or "")
+        )
+        self.assertEqual(len(notes), 1)
+        self.assertIn("RFQ Test Vendor", notes.body)
+        self.assertIn(order.name, notes.body)
