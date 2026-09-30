@@ -285,7 +285,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__id
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_count

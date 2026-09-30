@@ -173,8 +173,8 @@ msgid ""
 "Automatically email vendors an escalating reminder while a sent RFQ stays "
 "unanswered"
 msgstr ""
-"Lieferanten automatisch per E-Mail mit eskalierenden Erinnerungen kontaktieren,"
-" solange eine gesendete Angebotsanfrage unbeantwortet bleibt"
+"Lieferanten automatisch per E-Mail mit eskalierenden Erinnerungen "
+"kontaktieren, solange eine gesendete Angebotsanfrage unbeantwortet bleibt"
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_sent
@@ -199,9 +199,10 @@ msgid ""
 "Days after an RFQ is sent before the final follow-up email is sent, with the"
 " buyer copied in. Should be larger than the second reminder."
 msgstr ""
-"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die abschließende"
-" Nachfass-E-Mail versendet wird – dabei wird der Einkäufer in Kopie gesetzt."
-" Dieser Wert sollte größer sein als der der zweiten Erinnerung."
+"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die "
+"abschließende Nachfass-E-Mail versendet wird – dabei wird der Einkäufer in "
+"Kopie gesetzt. Dieser Wert sollte größer sein als der der zweiten "
+"Erinnerung."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
@@ -209,8 +210,8 @@ msgid ""
 "Days after an RFQ is sent before the first (gentle) follow-up email is sent "
 "to the vendor."
 msgstr ""
-"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die erste"
-" (freundliche) Nachfass-E-Mail an den Lieferanten versendet wird."
+"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die erste "
+"(freundliche) Nachfass-E-Mail an den Lieferanten versendet wird."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
@@ -218,9 +219,9 @@ msgid ""
 "Days after an RFQ is sent before the second (firm) follow-up email is sent. "
 "Should be larger than the first reminder."
 msgstr ""
-"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die zweite"
-" (bestimmtere) Nachfass-E-Mail versendet wird. Dieser Wert sollte größer"
-" sein als der der ersten Erinnerung."
+"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die zweite "
+"(bestimmtere) Nachfass-E-Mail versendet wird. Dieser Wert sollte größer sein"
+" als der der ersten Erinnerung."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__display_name
@@ -244,18 +245,22 @@ msgstr "Letzte Erinnerung"
 msgid ""
 "Final reminder sent when a vendor has gone silent; the buyer is copied in."
 msgstr ""
-"Letzte Erinnerung, die versendet wird, wenn ein Lieferant nicht mehr"
-" reagiert; der Einkäufer wird in Kopie gesetzt."
+"Letzte Erinnerung, die versendet wird, wenn ein Lieferant nicht mehr "
+"reagiert; der Einkäufer wird in Kopie gesetzt."
 
 #. module: no_rfq_follow_up
 #: model:mail.template,subject:no_rfq_follow_up.template_rfq_reminder_3
 msgid "Final reminder: response needed on RFQ {{ object.name }}"
-msgstr "Letzte Erinnerung: Antwort zur Angebotsanfrage {{ object.name }} erforderlich"
+msgstr ""
+"Letzte Erinnerung: Antwort zur Angebotsanfrage {{ object.name }} "
+"erforderlich"
 
 #. module: no_rfq_follow_up
 #: model:mail.template,description:no_rfq_follow_up.template_rfq_reminder_2
 msgid "Firmer reminder sent when a vendor still has not answered the RFQ."
-msgstr "Bestimmtere Erinnerung, die versendet wird, wenn ein Lieferant die Angebotsanfrage noch immer nicht beantwortet hat."
+msgstr ""
+"Bestimmtere Erinnerung, die versendet wird, wenn ein Lieferant die "
+"Angebotsanfrage noch immer nicht beantwortet hat."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
@@ -278,22 +283,22 @@ msgstr "Nachfrage: Angebotsanfrage {{ object.name }}"
 msgid ""
 "Friendly first follow-up sent when a vendor has not yet answered a sent RFQ."
 msgstr ""
-"Freundliche erste Nachfass-E-Mail, die versendet wird, wenn ein Lieferant"
-" eine gesendete Angebotsanfrage noch nicht beantwortet hat."
+"Freundliche erste Nachfass-E-Mail, die versendet wird, wenn ein Lieferant "
+"eine gesendete Angebotsanfrage noch nicht beantwortet hat."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__id
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_count
 msgid ""
 "Number of follow-up reminder emails already sent to the vendor for this RFQ."
 msgstr ""
-"Anzahl der bereits an den Lieferanten gesendeten Nachfass-Erinnerungs-E-Mails"
-" für diese Angebotsanfrage."
+"Anzahl der bereits an den Lieferanten gesendeten Nachfass-Erinnerungs-E-"
+"Mails für diese Angebotsanfrage."
 
 #. module: no_rfq_follow_up
 #: model:ir.model,name:no_rfq_follow_up.model_purchase_order
@@ -363,10 +368,10 @@ msgid ""
 "follow-up reminder while this RFQ stays unanswered. Untick to stop chasing "
 "this particular RFQ."
 msgstr ""
-"Wenn aktiviert, sendet der tägliche geplante Vorgang dem Lieferanten"
-" eskalierende Nachfass-Erinnerungen, solange diese Angebotsanfrage"
-" unbeantwortet bleibt. Deaktivieren Sie diese Option, um die Nachverfolgung"
-" dieser bestimmten Angebotsanfrage zu beenden."
+"Wenn aktiviert, sendet der tägliche geplante Vorgang dem Lieferanten "
+"eskalierende Nachfass-Erinnerungen, solange diese Angebotsanfrage "
+"unbeantwortet bleibt. Deaktivieren Sie diese Option, um die Nachverfolgung "
+"dieser bestimmten Angebotsanfrage zu beenden."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_sent_date
@@ -375,6 +380,7 @@ msgid ""
 "automatically on the draft -> sent transition and used as the anchor for the"
 " follow-up reminder schedule."
 msgstr ""
-"Zeitpunkt, zu dem diese Angebotsanfrage erstmals an den Lieferanten versendet"
-" wurde. Wird automatisch beim Übergang von Entwurf zu Versendet gesetzt und"
-" dient als Ausgangspunkt für den Zeitplan der Nachfass-Erinnerungen."
+"Zeitpunkt, zu dem diese Angebotsanfrage erstmals an den Lieferanten "
+"versendet wurde. Wird automatisch beim Übergang von Entwurf zu Versendet "
+"gesetzt und dient als Ausgangspunkt für den Zeitplan der Nachfass-"
+"Erinnerungen."
