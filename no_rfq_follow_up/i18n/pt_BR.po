@@ -17,6 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "%(reminder)s emailed to %(vendor)s: %(subject)s"
+msgstr "%(reminder)s enviado por e-mail para %(vendor)s: %(subject)s"
+
+#. module: no_rfq_follow_up
 #: model:mail.template,body_html:no_rfq_follow_up.template_rfq_reminder_3
 msgid ""
 "<div style=\"margin: 0px; padding: 0px;\">\n"
@@ -226,6 +232,12 @@ msgid "Final Reminder (days after sent)"
 msgstr "Lembrete Final (dias após o envio)"
 
 #. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "Final reminder"
+msgstr "Lembrete final"
+
+#. module: no_rfq_follow_up
 #: model:mail.template,description:no_rfq_follow_up.template_rfq_reminder_3
 msgid ""
 "Final reminder sent when a vendor has gone silent; the buyer is copied in."
@@ -249,6 +261,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
 msgid "First Reminder (days after sent)"
 msgstr "Primeiro Lembrete (dias após o envio)"
+
+#. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "First follow-up reminder"
+msgstr "Primeiro lembrete de acompanhamento"
 
 #. module: no_rfq_follow_up
 #: model:mail.template,subject:no_rfq_follow_up.template_rfq_reminder_1
@@ -331,6 +349,12 @@ msgstr "Lembretes Enviados"
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
 msgid "Second Reminder (days after sent)"
 msgstr "Segundo Lembrete (dias após o envio)"
+
+#. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "Second follow-up reminder"
+msgstr "Segundo lembrete de acompanhamento"
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_enabled
