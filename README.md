@@ -81,7 +81,7 @@ Odoo: http://localhost:23447
 docker exec rfqfollowup-odoo-20 odoo --stop-after-init --db_host=db --db_user=odoo --db_password=odoo -d test_db -i no_rfq_follow_up --test-enable --test-tags /no_rfq_follow_up
 ```
 
-Ten Python `TransactionCase` tests cover first-reminder send, the chatter note, a first offset set in Settings, no-resend, draft skip, disabled skip, confirmed-PO skip, the firm reminder at the second offset, long-overdue catch-up, and the draft-reset clearing the chase history.
+Eleven Python `TransactionCase` tests cover first-reminder send, the chatter note, the form layout, a first offset set in Settings, no-resend, draft skip, disabled skip, confirmed-PO skip, the firm reminder at the second offset, long-overdue catch-up, and the draft-reset clearing the chase history.
 
 ## Languages
 

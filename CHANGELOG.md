@@ -9,6 +9,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 - Each reminder is now logged on the RFQ: a note in its chatter names the
   reminder, the vendor and the subject. Before, the reminders were emailed
   but left no trace on the RFQ, although the listing promised one.
+- Odoo 20: Auto-Chase Vendor, RFQ Sent On and Reminders Sent are labelled lines
+  of the RFQ form again (the 20 form had squeezed them, unlabelled, next to
+  the order deadline).
 
 ### Changed
 - Ported to Odoo 20 (official `odoo:20` image; full test suite passes). The
