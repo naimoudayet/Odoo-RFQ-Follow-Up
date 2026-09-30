@@ -179,9 +179,7 @@ msgid ""
 "Comma-separated tokens marking which follow-up reminders have already fired "
 "for this RFQ (e.g. 'r1,r2'). Used by the daily cron to avoid sending the "
 "same reminder twice."
-msgstr ""
-"以逗号分隔的标记，用于记录已针对本询价单发送过的跟进提醒（例如 'r1,r2'）。"
-"每日计划任务通过此字段避免重复发送相同的提醒。"
+msgstr "以逗号分隔的标记，用于记录已针对本询价单发送过的跟进提醒（例如 'r1,r2'）。每日计划任务通过此字段避免重复发送相同的提醒。"
 
 #. module: no_rfq_follow_up
 #: model:ir.model,name:no_rfq_follow_up.model_res_config_settings
@@ -193,9 +191,7 @@ msgstr "配置设置"
 msgid ""
 "Days after an RFQ is sent before the final follow-up email is sent, with the"
 " buyer copied in. Should be larger than the second reminder."
-msgstr ""
-"询价单发出后，发送最终跟进邮件（并抄送采购员）所需等待的天数。"
-"该值应大于第二次提醒的间隔天数。"
+msgstr "询价单发出后，发送最终跟进邮件（并抄送采购员）所需等待的天数。该值应大于第二次提醒的间隔天数。"
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
@@ -209,9 +205,7 @@ msgstr "询价单发出后，向供应商发送第一封（温和）跟进邮件
 msgid ""
 "Days after an RFQ is sent before the second (firm) follow-up email is sent. "
 "Should be larger than the first reminder."
-msgstr ""
-"询价单发出后，发送第二封（正式）跟进邮件所需等待的天数。"
-"该值应大于第一次提醒的间隔天数。"
+msgstr "询价单发出后，发送第二封（正式）跟进邮件所需等待的天数。该值应大于第一次提醒的间隔天数。"
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__display_name
@@ -272,7 +266,7 @@ msgstr "当供应商尚未回复已发送的询价单时，发送的友好初次
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__id
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_count
@@ -347,9 +341,7 @@ msgid ""
 "When enabled, the daily scheduled action emails the vendor an escalating "
 "follow-up reminder while this RFQ stays unanswered. Untick to stop chasing "
 "this particular RFQ."
-msgstr ""
-"启用后，每日计划任务将在本询价单未得到回复期间，向供应商发送逐步升级的跟进提醒邮件。"
-"取消勾选可停止对本询价单的跟进催促。"
+msgstr "启用后，每日计划任务将在本询价单未得到回复期间，向供应商发送逐步升级的跟进提醒邮件。取消勾选可停止对本询价单的跟进催促。"
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_sent_date
@@ -357,6 +349,4 @@ msgid ""
 "When this Request for Quotation was first sent to the vendor. Stamped "
 "automatically on the draft -> sent transition and used as the anchor for the"
 " follow-up reminder schedule."
-msgstr ""
-"本询价单首次发送给供应商的时间。在询价单从草稿转为已发送状态时自动记录，"
-"并作为跟进提醒计划的时间基准。"
+msgstr "本询价单首次发送给供应商的时间。在询价单从草稿转为已发送状态时自动记录，并作为跟进提醒计划的时间基准。"

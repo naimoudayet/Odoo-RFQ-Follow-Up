@@ -174,8 +174,8 @@ msgid ""
 "Automatically email vendors an escalating reminder while a sent RFQ stays "
 "unanswered"
 msgstr ""
-"Envoyer automatiquement aux fournisseurs des rappels progressifs tant qu'une "
-"demande de prix envoyée reste sans réponse"
+"Envoyer automatiquement aux fournisseurs des rappels progressifs tant qu'une"
+" demande de prix envoyée reste sans réponse"
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_sent
@@ -184,9 +184,9 @@ msgid ""
 "for this RFQ (e.g. 'r1,r2'). Used by the daily cron to avoid sending the "
 "same reminder twice."
 msgstr ""
-"Jetons séparés par des virgules indiquant les rappels de relance déjà envoyés "
-"pour cette demande de prix (ex. : « r1,r2 »). Utilisé par la tâche planifiée "
-"quotidienne pour éviter d'envoyer deux fois le même rappel."
+"Jetons séparés par des virgules indiquant les rappels de relance déjà "
+"envoyés pour cette demande de prix (ex. : « r1,r2 »). Utilisé par la tâche "
+"planifiée quotidienne pour éviter d'envoyer deux fois le même rappel."
 
 #. module: no_rfq_follow_up
 #: model:ir.model,name:no_rfq_follow_up.model_res_config_settings
@@ -199,9 +199,9 @@ msgid ""
 "Days after an RFQ is sent before the final follow-up email is sent, with the"
 " buyer copied in. Should be larger than the second reminder."
 msgstr ""
-"Nombre de jours après l'envoi d'une demande de prix avant l'envoi du dernier "
-"e-mail de relance, avec l'acheteur en copie. Doit être supérieur au délai du "
-"deuxième rappel."
+"Nombre de jours après l'envoi d'une demande de prix avant l'envoi du dernier"
+" e-mail de relance, avec l'acheteur en copie. Doit être supérieur au délai "
+"du deuxième rappel."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
@@ -209,8 +209,8 @@ msgid ""
 "Days after an RFQ is sent before the first (gentle) follow-up email is sent "
 "to the vendor."
 msgstr ""
-"Nombre de jours après l'envoi d'une demande de prix avant l'envoi du premier "
-"e-mail de relance (courtois) au fournisseur."
+"Nombre de jours après l'envoi d'une demande de prix avant l'envoi du premier"
+" e-mail de relance (courtois) au fournisseur."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
@@ -218,8 +218,9 @@ msgid ""
 "Days after an RFQ is sent before the second (firm) follow-up email is sent. "
 "Should be larger than the first reminder."
 msgstr ""
-"Nombre de jours après l'envoi d'une demande de prix avant l'envoi du deuxième "
-"e-mail de relance (ferme). Doit être supérieur au délai du premier rappel."
+"Nombre de jours après l'envoi d'une demande de prix avant l'envoi du "
+"deuxième e-mail de relance (ferme). Doit être supérieur au délai du premier "
+"rappel."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__display_name
@@ -249,12 +250,15 @@ msgstr ""
 #. module: no_rfq_follow_up
 #: model:mail.template,subject:no_rfq_follow_up.template_rfq_reminder_3
 msgid "Final reminder: response needed on RFQ {{ object.name }}"
-msgstr "Dernier rappel : réponse requise pour la demande de prix {{ object.name }}"
+msgstr ""
+"Dernier rappel : réponse requise pour la demande de prix {{ object.name }}"
 
 #. module: no_rfq_follow_up
 #: model:mail.template,description:no_rfq_follow_up.template_rfq_reminder_2
 msgid "Firmer reminder sent when a vendor still has not answered the RFQ."
-msgstr "Rappel plus ferme envoyé lorsqu'un fournisseur n'a toujours pas répondu à la demande de prix."
+msgstr ""
+"Rappel plus ferme envoyé lorsqu'un fournisseur n'a toujours pas répondu à la"
+" demande de prix."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
@@ -284,15 +288,15 @@ msgstr ""
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__id
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_count
 msgid ""
 "Number of follow-up reminder emails already sent to the vendor for this RFQ."
 msgstr ""
-"Nombre d'e-mails de rappel de relance déjà envoyés au fournisseur pour cette "
-"demande de prix."
+"Nombre d'e-mails de rappel de relance déjà envoyés au fournisseur pour cette"
+" demande de prix."
 
 #. module: no_rfq_follow_up
 #: model:ir.model,name:no_rfq_follow_up.model_purchase_order
@@ -363,9 +367,9 @@ msgid ""
 "this particular RFQ."
 msgstr ""
 "Lorsque cette option est activée, la tâche planifiée quotidienne envoie au "
-"fournisseur des rappels de relance progressifs tant que cette demande de prix "
-"reste sans réponse. Décochez cette case pour cesser de relancer cette demande "
-"de prix."
+"fournisseur des rappels de relance progressifs tant que cette demande de "
+"prix reste sans réponse. Décochez cette case pour cesser de relancer cette "
+"demande de prix."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_sent_date
@@ -374,7 +378,7 @@ msgid ""
 "automatically on the draft -> sent transition and used as the anchor for the"
 " follow-up reminder schedule."
 msgstr ""
-"Date à laquelle cette demande de prix a été envoyée pour la première fois au "
-"fournisseur. Horodatée automatiquement lors de la transition brouillon -> "
-"envoyé et utilisée comme point de référence pour le calendrier des rappels de "
-"relance."
+"Date à laquelle cette demande de prix a été envoyée pour la première fois au"
+" fournisseur. Horodatée automatiquement lors de la transition brouillon -> "
+"envoyé et utilisée comme point de référence pour le calendrier des rappels "
+"de relance."

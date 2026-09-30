@@ -172,9 +172,9 @@ msgid ""
 "Automatically email vendors an escalating reminder while a sent RFQ stays "
 "unanswered"
 msgstr ""
-"Envía automáticamente recordatorios por correo electrónico a los proveedores "
-"con escalado progresivo mientras una solicitud de presupuesto enviada permanezca "
-"sin respuesta"
+"Envía automáticamente recordatorios por correo electrónico a los proveedores"
+" con escalado progresivo mientras una solicitud de presupuesto enviada "
+"permanezca sin respuesta"
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_sent
@@ -183,9 +183,9 @@ msgid ""
 "for this RFQ (e.g. 'r1,r2'). Used by the daily cron to avoid sending the "
 "same reminder twice."
 msgstr ""
-"Tokens separados por comas que indican qué recordatorios de seguimiento ya se "
-"han enviado para esta solicitud de presupuesto (p. ej. 'r1,r2'). Lo utiliza "
-"el cron diario para evitar enviar el mismo recordatorio dos veces."
+"Tokens separados por comas que indican qué recordatorios de seguimiento ya "
+"se han enviado para esta solicitud de presupuesto (p. ej. 'r1,r2'). Lo "
+"utiliza el cron diario para evitar enviar el mismo recordatorio dos veces."
 
 #. module: no_rfq_follow_up
 #: model:ir.model,name:no_rfq_follow_up.model_res_config_settings
@@ -198,9 +198,9 @@ msgid ""
 "Days after an RFQ is sent before the final follow-up email is sent, with the"
 " buyer copied in. Should be larger than the second reminder."
 msgstr ""
-"Días después del envío de una solicitud de presupuesto antes de que se envíe "
-"el correo de seguimiento final, con copia al comprador. Debe ser mayor que el "
-"segundo recordatorio."
+"Días después del envío de una solicitud de presupuesto antes de que se envíe"
+" el correo de seguimiento final, con copia al comprador. Debe ser mayor que "
+"el segundo recordatorio."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
@@ -208,8 +208,8 @@ msgid ""
 "Days after an RFQ is sent before the first (gentle) follow-up email is sent "
 "to the vendor."
 msgstr ""
-"Días después del envío de una solicitud de presupuesto antes de que se envíe "
-"el primer correo de seguimiento (suave) al proveedor."
+"Días después del envío de una solicitud de presupuesto antes de que se envíe"
+" el primer correo de seguimiento (suave) al proveedor."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
@@ -217,8 +217,8 @@ msgid ""
 "Days after an RFQ is sent before the second (firm) follow-up email is sent. "
 "Should be larger than the first reminder."
 msgstr ""
-"Días después del envío de una solicitud de presupuesto antes de que se envíe "
-"el segundo correo de seguimiento (firme). Debe ser mayor que el primer "
+"Días después del envío de una solicitud de presupuesto antes de que se envíe"
+" el segundo correo de seguimiento (firme). Debe ser mayor que el primer "
 "recordatorio."
 
 #. module: no_rfq_follow_up
@@ -249,12 +249,16 @@ msgstr ""
 #. module: no_rfq_follow_up
 #: model:mail.template,subject:no_rfq_follow_up.template_rfq_reminder_3
 msgid "Final reminder: response needed on RFQ {{ object.name }}"
-msgstr "Recordatorio final: se requiere respuesta a la solicitud de presupuesto {{ object.name }}"
+msgstr ""
+"Recordatorio final: se requiere respuesta a la solicitud de presupuesto {{ "
+"object.name }}"
 
 #. module: no_rfq_follow_up
 #: model:mail.template,description:no_rfq_follow_up.template_rfq_reminder_2
 msgid "Firmer reminder sent when a vendor still has not answered the RFQ."
-msgstr "Recordatorio firme enviado cuando el proveedor todavía no ha respondido la solicitud de presupuesto."
+msgstr ""
+"Recordatorio firme enviado cuando el proveedor todavía no ha respondido la "
+"solicitud de presupuesto."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
@@ -277,14 +281,14 @@ msgstr "Seguimiento: solicitud de presupuesto {{ object.name }}"
 msgid ""
 "Friendly first follow-up sent when a vendor has not yet answered a sent RFQ."
 msgstr ""
-"Primer seguimiento amistoso enviado cuando un proveedor aún no ha respondido "
-"a una solicitud de presupuesto enviada."
+"Primer seguimiento amistoso enviado cuando un proveedor aún no ha respondido"
+" a una solicitud de presupuesto enviada."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__id
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_count
@@ -302,7 +306,8 @@ msgstr "Pedido de compra"
 #. module: no_rfq_follow_up
 #: model:ir.actions.server,name:no_rfq_follow_up.ir_cron_rfq_follow_up_reminder_ir_actions_server
 msgid "Purchase: Send RFQ follow-up reminders"
-msgstr "Compras: enviar recordatorios de seguimiento de solicitudes de presupuesto"
+msgstr ""
+"Compras: enviar recordatorios de seguimiento de solicitudes de presupuesto"
 
 #. module: no_rfq_follow_up
 #: model_terms:ir.ui.view,arch_db:no_rfq_follow_up.res_config_settings_view_form_rfq_follow_up
@@ -337,7 +342,8 @@ msgstr "Solicitud de presupuesto enviada el"
 #. module: no_rfq_follow_up
 #: model:mail.template,subject:no_rfq_follow_up.template_rfq_reminder_2
 msgid "Reminder: quotation still pending for {{ object.name }}"
-msgstr "Recordatorio: cotización pendiente de respuesta para {{ object.name }}"
+msgstr ""
+"Recordatorio: cotización pendiente de respuesta para {{ object.name }}"
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_count
@@ -375,6 +381,6 @@ msgid ""
 " follow-up reminder schedule."
 msgstr ""
 "Fecha en que esta solicitud de presupuesto fue enviada por primera vez al "
-"proveedor. Se registra automáticamente en la transición de borrador a enviado "
-"y se utiliza como referencia para la programación de recordatorios de "
-"seguimiento."
+"proveedor. Se registra automáticamente en la transición de borrador a "
+"enviado y se utiliza como referencia para la programación de recordatorios "
+"de seguimiento."
