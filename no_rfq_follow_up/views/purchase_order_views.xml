@@ -8,6 +8,9 @@
     the RFQ has been sent, the sent date and how many reminders have
     fired. The read-only fields stay hidden until the RFQ is actually
     sent so the form is uncluttered for fresh quotations.
+
+    Odoo 20 wraps date_order in a row (date + reset button): the fields go
+    after that row, as labelled lines of the group, not inside it.
 -->
 <odoo>
     <record id="view_purchase_order_form_rfq_follow_up" model="ir.ui.view">
@@ -15,7 +18,7 @@
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.purchase_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='date_order']" position="after">
+            <xpath expr="//div[field[@name='date_order']]" position="after">
                 <field name="x_rfq_reminder_enabled"
                        invisible="state not in ('draft', 'sent')"/>
                 <field name="x_rfq_sent_date"

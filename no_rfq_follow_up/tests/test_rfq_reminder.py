@@ -259,3 +259,19 @@ class TestRfqFollowUp(TransactionCase):
         self.assertEqual(len(notes), 1)
         self.assertIn("RFQ Test Vendor", notes.body)
         self.assertIn(order.name, notes.body)
+
+    def test_form_fields_are_labelled_lines(self):
+        """On 20 date_order sits in a row: the module's fields must be lines
+        of the group (with labels), not squeezed into that row."""
+        from lxml import etree
+
+        arch = self.PurchaseOrder.get_view(view_type="form")["arch"]
+        doc = etree.fromstring(arch)
+        for name in (
+            "x_rfq_reminder_enabled",
+            "x_rfq_sent_date",
+            "x_rfq_reminder_count",
+        ):
+            nodes = doc.xpath("//field[@name='%s']" % name)
+            self.assertEqual(len(nodes), 1, name)
+            self.assertEqual(nodes[0].getparent().tag, "group", name)
