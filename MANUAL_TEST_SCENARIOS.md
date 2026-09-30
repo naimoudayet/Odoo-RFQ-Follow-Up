@@ -1,6 +1,6 @@
 # Manual Test Scenarios — RFQ Follow-Up Reminder
 
-Dev stack: `docker-compose up -d`, then open <http://localhost:13447> and use database `rfq19`.
+Dev stack: `docker-compose up -d`, then open <http://localhost:23447> and use database `rfq19`.
 Developer mode must be on to edit the read-only `RFQ Sent On` field for back-dating.
 
 ## 1. Sent-date stamping

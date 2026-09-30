@@ -1,9 +1,9 @@
-name: rfqfollowup-19
+name: rfqfollowup-20
 
 services:
   db:
     image: postgres:16
-    container_name: rfqfollowup-pg-19
+    container_name: rfqfollowup-pg-20
     environment:
       POSTGRES_USER: odoo
       POSTGRES_PASSWORD: odoo
@@ -13,11 +13,11 @@ services:
 
   odoo:
     build: .
-    container_name: rfqfollowup-odoo-19
+    container_name: rfqfollowup-odoo-20
     depends_on:
       - db
     ports:
-      - "13447:8069"
+      - "23447:8069"
     environment:
       HOST: db
       USER: odoo
@@ -26,6 +26,8 @@ services:
     volumes:
       - odoo-data:/var/lib/odoo
       - ./no_rfq_follow_up:/mnt/extra-addons/no_rfq_follow_up
+    # Odoo 20 listens on 127.0.0.1 by default; bind all interfaces so the port works
+    command: ["odoo", "--http-interface=0.0.0.0"]
 
 volumes:
   db-data:

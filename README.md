@@ -1,15 +1,15 @@
 # RFQ Follow-Up Reminder
 
 ![License](https://img.shields.io/badge/license-LGPL--3-blue)
-![Odoo](https://img.shields.io/badge/Odoo-19.0-blueviolet)
+![Odoo](https://img.shields.io/badge/Odoo-20.0-blueviolet)
 ![Languages](https://img.shields.io/badge/languages-9-orange)
-![Version](https://img.shields.io/badge/version-19.0.1.1.0-informational)
+![Version](https://img.shields.io/badge/version-20.0.1.1.0-informational)
 
 Automatically chase vendors who never answered your Request for Quotation. A daily scheduled action emails the vendor an escalating sequence of reminders — gentle, firm, then final — while the RFQ stays unanswered. Configurable cadence, editable templates, no JavaScript.
 
 ## Why
 
-Odoo 19 ships a vendor reminder mechanism, but it only chases the **receipt date** of already-confirmed purchase orders (`_send_reminder_mail` runs on `state == 'purchase'` with `acknowledged == False`). Nothing chases a vendor who has simply never replied to a Request for Quotation sitting in `state == 'sent'`. Buyers track those by hand. This module closes that gap with a daily cron and three editable `mail.template` records.
+Odoo 20 ships a vendor reminder mechanism, but it only chases the **receipt date** of already-confirmed purchase orders (`_send_reminder_mail` runs on `state == 'purchase'` with `acknowledged == False`). Nothing chases a vendor who has simply never replied to a Request for Quotation sitting in `state == 'sent'`. Buyers track those by hand. This module closes that gap with a daily cron and three editable `mail.template` records.
 
 ## Features
 
@@ -34,8 +34,8 @@ Odoo 19 ships a vendor reminder mechanism, but it only chases the **receipt date
 
 | Field            | Value                                                  |
 |------------------|--------------------------------------------------------|
-| Module Version | 19.0.1.1.0                                             |
-| Odoo Version     | 19.0 Community + Enterprise                            |
+| Module Version | 20.0.1.1.0                                             |
+| Odoo Version     | 20.0 Community + Enterprise                            |
 | License          | LGPL-3                                                 |
 | Dependencies     | `purchase`                                             |
 | Python Deps      | none                                                   |
@@ -73,12 +73,12 @@ Odoo 19 ships a vendor reminder mechanism, but it only chases the **receipt date
 docker-compose up -d
 ```
 
-Odoo: http://localhost:13447
+Odoo: http://localhost:23447
 
 ## Running Tests
 
 ```bash
-docker exec rfqfollowup-odoo-19 odoo --stop-after-init --db_host=db --db_user=odoo --db_password=odoo -d test_db -i no_rfq_follow_up --test-enable --test-tags /no_rfq_follow_up
+docker exec rfqfollowup-odoo-20 odoo --stop-after-init --db_host=db --db_user=odoo --db_password=odoo -d test_db -i no_rfq_follow_up --test-enable --test-tags /no_rfq_follow_up
 ```
 
 Eight Python `TransactionCase` tests cover first-reminder send, no-resend, draft skip, disabled skip, confirmed-PO skip, the firm reminder at the second offset, long-overdue catch-up, and the draft-reset clearing the chase history.
@@ -103,7 +103,7 @@ Each user sees the emails and form labels in the language set in **Preferences -
 
 ## Compatibility
 
-- Odoo 19.0 Community + Enterprise
+- Odoo 20.0 Community + Enterprise
 
 ## Author
 
