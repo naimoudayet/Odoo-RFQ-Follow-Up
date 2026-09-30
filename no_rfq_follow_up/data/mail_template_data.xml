@@ -16,8 +16,7 @@
 
     noupdate="1": preserves admin edits across module updates.
 -->
-<odoo>
-    <data noupdate="1">
+<odoo noupdate="1">
 
         <!-- Reminder 1: gentle follow-up -->
         <record id="template_rfq_reminder_1" model="mail.template">
@@ -118,5 +117,4 @@
             </field>
         </record>
 
-    </data>
 </odoo>

@@ -17,6 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "%(reminder)s emailed to %(vendor)s: %(subject)s"
+msgstr "%(reminder)s inviato via e-mail a %(vendor)s: %(subject)s"
+
+#. module: no_rfq_follow_up
 #: model:mail.template,body_html:no_rfq_follow_up.template_rfq_reminder_3
 msgid ""
 "<div style=\"margin: 0px; padding: 0px;\">\n"
@@ -176,9 +182,9 @@ msgid ""
 "for this RFQ (e.g. 'r1,r2'). Used by the daily cron to avoid sending the "
 "same reminder twice."
 msgstr ""
-"Token separati da virgola che indicano quali solleciti di follow-up sono già "
-"stati inviati per questa richiesta di offerta (es. 'r1,r2'). Utilizzato dal "
-"cron giornaliero per evitare di inviare lo stesso sollecito due volte."
+"Token separati da virgola che indicano quali solleciti di follow-up sono già"
+" stati inviati per questa richiesta di offerta (es. 'r1,r2'). Utilizzato dal"
+" cron giornaliero per evitare di inviare lo stesso sollecito due volte."
 
 #. module: no_rfq_follow_up
 #: model:ir.model,name:no_rfq_follow_up.model_res_config_settings
@@ -191,8 +197,9 @@ msgid ""
 "Days after an RFQ is sent before the final follow-up email is sent, with the"
 " buyer copied in. Should be larger than the second reminder."
 msgstr ""
-"Giorni dall'invio di una richiesta di offerta prima dell'invio dell'email di "
-"sollecito finale, con copia all'acquirente. Deve essere superiore al secondo sollecito."
+"Giorni dall'invio di una richiesta di offerta prima dell'invio dell'email di"
+" sollecito finale, con copia all'acquirente. Deve essere superiore al "
+"secondo sollecito."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
@@ -224,26 +231,43 @@ msgid "Final Reminder (days after sent)"
 msgstr "Sollecito finale (giorni dall'invio)"
 
 #. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "Final reminder"
+msgstr "Sollecito finale"
+
+#. module: no_rfq_follow_up
 #: model:mail.template,description:no_rfq_follow_up.template_rfq_reminder_3
 msgid ""
 "Final reminder sent when a vendor has gone silent; the buyer is copied in."
 msgstr ""
-"Sollecito finale inviato quando un fornitore non dà più riscontri; l'acquirente viene messo in copia."
+"Sollecito finale inviato quando un fornitore non dà più riscontri; "
+"l'acquirente viene messo in copia."
 
 #. module: no_rfq_follow_up
 #: model:mail.template,subject:no_rfq_follow_up.template_rfq_reminder_3
 msgid "Final reminder: response needed on RFQ {{ object.name }}"
-msgstr "Sollecito finale: risposta richiesta per la richiesta di offerta {{ object.name }}"
+msgstr ""
+"Sollecito finale: risposta richiesta per la richiesta di offerta {{ "
+"object.name }}"
 
 #. module: no_rfq_follow_up
 #: model:mail.template,description:no_rfq_follow_up.template_rfq_reminder_2
 msgid "Firmer reminder sent when a vendor still has not answered the RFQ."
-msgstr "Sollecito deciso inviato quando un fornitore non ha ancora risposto alla richiesta di offerta."
+msgstr ""
+"Sollecito deciso inviato quando un fornitore non ha ancora risposto alla "
+"richiesta di offerta."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
 msgid "First Reminder (days after sent)"
 msgstr "Primo sollecito (giorni dall'invio)"
+
+#. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "First follow-up reminder"
+msgstr "Primo sollecito"
 
 #. module: no_rfq_follow_up
 #: model:mail.template,subject:no_rfq_follow_up.template_rfq_reminder_1
@@ -255,20 +279,22 @@ msgstr "Follow-up: richiesta di offerta {{ object.name }}"
 msgid ""
 "Friendly first follow-up sent when a vendor has not yet answered a sent RFQ."
 msgstr ""
-"Primo sollecito cordiale inviato quando un fornitore non ha ancora risposto a una richiesta di offerta inviata."
+"Primo sollecito cordiale inviato quando un fornitore non ha ancora risposto "
+"a una richiesta di offerta inviata."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__id
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_count
 msgid ""
 "Number of follow-up reminder emails already sent to the vendor for this RFQ."
 msgstr ""
-"Numero di email di sollecito già inviate al fornitore per questa richiesta di offerta."
+"Numero di email di sollecito già inviate al fornitore per questa richiesta "
+"di offerta."
 
 #. module: no_rfq_follow_up
 #: model:ir.model,name:no_rfq_follow_up.model_purchase_order
@@ -326,15 +352,22 @@ msgid "Second Reminder (days after sent)"
 msgstr "Secondo sollecito (giorni dall'invio)"
 
 #. module: no_rfq_follow_up
+#. odoo-python
+#: code:addons/no_rfq_follow_up/models/purchase_order.py:0
+msgid "Second follow-up reminder"
+msgstr "Secondo sollecito"
+
+#. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_enabled
 msgid ""
 "When enabled, the daily scheduled action emails the vendor an escalating "
 "follow-up reminder while this RFQ stays unanswered. Untick to stop chasing "
 "this particular RFQ."
 msgstr ""
-"Se abilitato, l'azione pianificata giornaliera invia al fornitore un sollecito "
-"progressivo finché questa richiesta di offerta rimane senza risposta. "
-"Deselezionare per interrompere il follow-up su questa specifica richiesta di offerta."
+"Se abilitato, l'azione pianificata giornaliera invia al fornitore un "
+"sollecito progressivo finché questa richiesta di offerta rimane senza "
+"risposta. Deselezionare per interrompere il follow-up su questa specifica "
+"richiesta di offerta."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_sent_date

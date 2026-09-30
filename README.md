@@ -3,7 +3,7 @@
 ![License](https://img.shields.io/badge/license-LGPL--3-blue)
 ![Odoo](https://img.shields.io/badge/Odoo-19.0-blueviolet)
 ![Languages](https://img.shields.io/badge/languages-9-orange)
-![Version](https://img.shields.io/badge/version-19.0.1.1.0-informational)
+![Version](https://img.shields.io/badge/version-19.0.1.1.1-informational)
 
 Automatically chase vendors who never answered your Request for Quotation. A daily scheduled action emails the vendor an escalating sequence of reminders — gentle, firm, then final — while the RFQ stays unanswered. Configurable cadence, editable templates, no JavaScript.
 
@@ -34,7 +34,7 @@ Odoo 19 ships a vendor reminder mechanism, but it only chases the **receipt date
 
 | Field            | Value                                                  |
 |------------------|--------------------------------------------------------|
-| Module Version | 19.0.1.1.0                                             |
+| Module Version | 19.0.1.1.1                                             |
 | Odoo Version     | 19.0 Community + Enterprise                            |
 | License          | LGPL-3                                                 |
 | Dependencies     | `purchase`                                             |
@@ -81,7 +81,7 @@ Odoo: http://localhost:13447
 docker exec rfqfollowup-odoo-19 odoo --stop-after-init --db_host=db --db_user=odoo --db_password=odoo -d test_db -i no_rfq_follow_up --test-enable --test-tags /no_rfq_follow_up
 ```
 
-Eight Python `TransactionCase` tests cover first-reminder send, no-resend, draft skip, disabled skip, confirmed-PO skip, the firm reminder at the second offset, long-overdue catch-up, and the draft-reset clearing the chase history.
+Nine Python `TransactionCase` tests cover first-reminder send, the chatter note, no-resend, draft skip, disabled skip, confirmed-PO skip, the firm reminder at the second offset, long-overdue catch-up, and the draft-reset clearing the chase history.
 
 ## Languages
 

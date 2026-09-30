@@ -3,6 +3,13 @@
 All notable changes to **RFQ Follow-Up Reminder** are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [19.0.1.1.1] - 2026-09-30
+
+### Fixed
+- Each reminder is now logged on the RFQ: a note in its chatter names the
+  reminder, the vendor and the subject. Before, the reminders were emailed but
+  left no trace on the RFQ, although the listing promised one.
+
 ## [19.0.1.1.0]
 
 ### Changed
