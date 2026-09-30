@@ -186,13 +186,22 @@ msgid "Config Settings"
 msgstr "إعدادات التكوين"
 
 #. module: no_rfq_follow_up
+#: model:ir.module.module,summary:base.module_no_rfq_follow_up
+msgid ""
+"Cron-driven escalating email reminders that chase vendors who have not "
+"answered a sent Request for Quotation."
+msgstr ""
+"تذكيرات بريد إلكتروني متدرجة ومجدولة تلاحق الموردين الذين لم يردوا على طلب "
+"عرض أسعار مُرسَل."
+
+#. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_3
 msgid ""
 "Days after an RFQ is sent before the final follow-up email is sent, with the"
 " buyer copied in. Should be larger than the second reminder."
 msgstr ""
-"عدد الأيام بعد إرسال طلب عرض الأسعار قبل إرسال بريد المتابعة النهائي، مع "
-"نسخ المشتري. يجب أن يكون أكبر من التذكير الثاني."
+"عدد الأيام بعد إرسال طلب عرض الأسعار قبل إرسال بريد المتابعة النهائي، مع نسخ"
+" المشتري. يجب أن يكون أكبر من التذكير الثاني."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
@@ -200,8 +209,8 @@ msgid ""
 "Days after an RFQ is sent before the first (gentle) follow-up email is sent "
 "to the vendor."
 msgstr ""
-"عدد الأيام بعد إرسال طلب عرض الأسعار قبل إرسال بريد المتابعة الأول "
-"(اللطيف) إلى المورد."
+"عدد الأيام بعد إرسال طلب عرض الأسعار قبل إرسال بريد المتابعة الأول (اللطيف) "
+"إلى المورد."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
@@ -228,7 +237,8 @@ msgstr "التذكير النهائي (عدد الأيام بعد الإرسال
 msgid ""
 "Final reminder sent when a vendor has gone silent; the buyer is copied in."
 msgstr ""
-"التذكير النهائي يُرسَل عندما يتوقف المورد عن الرد؛ يُنسَخ المشتري في الرسالة."
+"التذكير النهائي يُرسَل عندما يتوقف المورد عن الرد؛ يُنسَخ المشتري في "
+"الرسالة."
 
 #. module: no_rfq_follow_up
 #: model:mail.template,subject:no_rfq_follow_up.template_rfq_reminder_3
@@ -255,7 +265,8 @@ msgstr "متابعة: طلب عرض الأسعار {{ object.name }}"
 msgid ""
 "Friendly first follow-up sent when a vendor has not yet answered a sent RFQ."
 msgstr ""
-"المتابعة الأولى اللطيفة تُرسَل عندما لا يكون المورد قد ردّ بعد على طلب عرض الأسعار المُرسَل."
+"المتابعة الأولى اللطيفة تُرسَل عندما لا يكون المورد قد ردّ بعد على طلب عرض "
+"الأسعار المُرسَل."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__id
@@ -279,6 +290,36 @@ msgstr "أمر الشراء"
 #: model:ir.actions.server,name:no_rfq_follow_up.ir_cron_rfq_follow_up_reminder_ir_actions_server
 msgid "Purchase: Send RFQ follow-up reminders"
 msgstr "المشتريات: إرسال تذكيرات متابعة طلبات عروض الأسعار"
+
+#. module: no_rfq_follow_up
+#: model:ir.module.module,shortdesc:base.module_no_rfq_follow_up
+msgid "RFQ Follow-Up Reminder"
+msgstr "تذكير متابعة طلبات عروض الأسعار"
+
+#. module: no_rfq_follow_up
+#: model:ir.module.module,description:base.module_no_rfq_follow_up
+msgid ""
+"RFQ Follow-Up Reminder runs a daily scheduled action that scans every "
+"Request for Quotation still in the sent state and emails the vendor an "
+"escalating sequence of follow-up reminders: a gentle nudge, a firm reminder,"
+" then a final notice. Reminder offsets default to 3, 7 and 14 days after the"
+" RFQ was sent and are configurable from Purchase Settings. Each reminder is "
+"tracked per order so the cron never sends the same email twice, and a per-"
+"RFQ toggle lets buyers stop chasing a specific vendor. The three messages "
+"are editable mail.template records. Native Odoo only chases the receipt date"
+" of confirmed purchase orders and has no mechanism to chase an unanswered "
+"RFQ. Pure server-side logic plus view inherits. No new models, no "
+"JavaScript."
+msgstr ""
+"يشغّل تذكير متابعة طلبات عروض الأسعار إجراءً مجدولًا يوميًا يفحص كل طلب عرض "
+"أسعار ما زال في حالة مُرسَل، ويرسل إلى المورد سلسلة متدرجة من التذكيرات: "
+"تذكير لطيف، ثم تذكير حازم، ثم إشعار أخير. المهل الافتراضية 3 و7 و14 يومًا "
+"بعد إرسال الطلب وتُضبط من إعدادات المشتريات. يُسجَّل كل تذكير لكل أمر فلا "
+"يرسل الإجراء البريد نفسه مرتين أبدًا، ويتيح مفتاح لكل طلب عرض أسعار للمشترين"
+" إيقاف ملاحقة مورد بعينه. الرسائل الثلاث سجلات mail.template قابلة للتعديل. "
+"لا يلاحق أودو إلا تاريخ الاستلام لأوامر الشراء المؤكدة، ولا يملك أي وسيلة "
+"لملاحقة طلب عرض أسعار لم يُرَد عليه. منطق على الخادم فقط مع وراثة للواجهات. "
+"بلا نماذج جديدة وبلا JavaScript."
 
 #. module: no_rfq_follow_up
 #: model_terms:ir.ui.view,arch_db:no_rfq_follow_up.res_config_settings_view_form_rfq_follow_up

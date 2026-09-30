@@ -176,9 +176,10 @@ msgid ""
 "for this RFQ (e.g. 'r1,r2'). Used by the daily cron to avoid sending the "
 "same reminder twice."
 msgstr ""
-"Door komma's gescheiden codes die aangeven welke vervolgherinneringen al zijn "
-"verzonden voor deze offerteaanvraag (bijv. 'r1,r2'). Gebruikt door de dagelijkse "
-"geplande actie om te voorkomen dat dezelfde herinnering twee keer wordt verzonden."
+"Door komma's gescheiden codes die aangeven welke vervolgherinneringen al "
+"zijn verzonden voor deze offerteaanvraag (bijv. 'r1,r2'). Gebruikt door de "
+"dagelijkse geplande actie om te voorkomen dat dezelfde herinnering twee keer"
+" wordt verzonden."
 
 #. module: no_rfq_follow_up
 #: model:ir.model,name:no_rfq_follow_up.model_res_config_settings
@@ -186,13 +187,22 @@ msgid "Config Settings"
 msgstr "Configuratie-instellingen"
 
 #. module: no_rfq_follow_up
+#: model:ir.module.module,summary:base.module_no_rfq_follow_up
+msgid ""
+"Cron-driven escalating email reminders that chase vendors who have not "
+"answered a sent Request for Quotation."
+msgstr ""
+"Geplande, oplopende e-mailherinneringen voor leveranciers die niet hebben "
+"gereageerd op een verzonden offerteaanvraag."
+
+#. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_3
 msgid ""
 "Days after an RFQ is sent before the final follow-up email is sent, with the"
 " buyer copied in. Should be larger than the second reminder."
 msgstr ""
-"Aantal dagen na het verzenden van een offerteaanvraag voordat de definitieve "
-"vervolgmail wordt verzonden, waarbij de inkoper in de cc wordt geplaatst. "
+"Aantal dagen na het verzenden van een offerteaanvraag voordat de definitieve"
+" vervolgmail wordt verzonden, waarbij de inkoper in de cc wordt geplaatst. "
 "Dient groter te zijn dan de tweede herinnering."
 
 #. module: no_rfq_follow_up
@@ -211,7 +221,8 @@ msgid ""
 "Should be larger than the first reminder."
 msgstr ""
 "Aantal dagen na het verzenden van een offerteaanvraag voordat de tweede "
-"(dringende) vervolgmail wordt verzonden. Dient groter te zijn dan de eerste herinnering."
+"(dringende) vervolgmail wordt verzonden. Dient groter te zijn dan de eerste "
+"herinnering."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__display_name
@@ -229,17 +240,21 @@ msgstr "Laatste herinnering (dagen na verzending)"
 msgid ""
 "Final reminder sent when a vendor has gone silent; the buyer is copied in."
 msgstr ""
-"Laatste herinnering verzonden wanneer een leverancier niet meer reageert; de inkoper wordt in de cc geplaatst."
+"Laatste herinnering verzonden wanneer een leverancier niet meer reageert; de"
+" inkoper wordt in de cc geplaatst."
 
 #. module: no_rfq_follow_up
 #: model:mail.template,subject:no_rfq_follow_up.template_rfq_reminder_3
 msgid "Final reminder: response needed on RFQ {{ object.name }}"
-msgstr "Laatste herinnering: reactie vereist op offerteaanvraag {{ object.name }}"
+msgstr ""
+"Laatste herinnering: reactie vereist op offerteaanvraag {{ object.name }}"
 
 #. module: no_rfq_follow_up
 #: model:mail.template,description:no_rfq_follow_up.template_rfq_reminder_2
 msgid "Firmer reminder sent when a vendor still has not answered the RFQ."
-msgstr "Dringende herinnering verzonden wanneer een leverancier de offerteaanvraag nog steeds niet heeft beantwoord."
+msgstr ""
+"Dringende herinnering verzonden wanneer een leverancier de offerteaanvraag "
+"nog steeds niet heeft beantwoord."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
@@ -256,20 +271,22 @@ msgstr "Opvolging: offerteaanvraag {{ object.name }}"
 msgid ""
 "Friendly first follow-up sent when a vendor has not yet answered a sent RFQ."
 msgstr ""
-"Vriendelijke eerste opvolging verzonden wanneer een leverancier een verzonden offerteaanvraag nog niet heeft beantwoord."
+"Vriendelijke eerste opvolging verzonden wanneer een leverancier een "
+"verzonden offerteaanvraag nog niet heeft beantwoord."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__id
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_count
 msgid ""
 "Number of follow-up reminder emails already sent to the vendor for this RFQ."
 msgstr ""
-"Aantal vervolgherinneringsmails dat al naar de leverancier is verzonden voor deze offerteaanvraag."
+"Aantal vervolgherinneringsmails dat al naar de leverancier is verzonden voor"
+" deze offerteaanvraag."
 
 #. module: no_rfq_follow_up
 #: model:ir.model,name:no_rfq_follow_up.model_purchase_order
@@ -280,6 +297,39 @@ msgstr "Inkooporder"
 #: model:ir.actions.server,name:no_rfq_follow_up.ir_cron_rfq_follow_up_reminder_ir_actions_server
 msgid "Purchase: Send RFQ follow-up reminders"
 msgstr "Inkoop: vervolgherinneringen offerteaanvraag verzenden"
+
+#. module: no_rfq_follow_up
+#: model:ir.module.module,shortdesc:base.module_no_rfq_follow_up
+msgid "RFQ Follow-Up Reminder"
+msgstr "Vervolgherinnering offerteaanvraag"
+
+#. module: no_rfq_follow_up
+#: model:ir.module.module,description:base.module_no_rfq_follow_up
+msgid ""
+"RFQ Follow-Up Reminder runs a daily scheduled action that scans every "
+"Request for Quotation still in the sent state and emails the vendor an "
+"escalating sequence of follow-up reminders: a gentle nudge, a firm reminder,"
+" then a final notice. Reminder offsets default to 3, 7 and 14 days after the"
+" RFQ was sent and are configurable from Purchase Settings. Each reminder is "
+"tracked per order so the cron never sends the same email twice, and a per-"
+"RFQ toggle lets buyers stop chasing a specific vendor. The three messages "
+"are editable mail.template records. Native Odoo only chases the receipt date"
+" of confirmed purchase orders and has no mechanism to chase an unanswered "
+"RFQ. Pure server-side logic plus view inherits. No new models, no "
+"JavaScript."
+msgstr ""
+"Vervolgherinnering offerteaanvraag voert dagelijks een geplande actie uit "
+"die elke offerteaanvraag nagaat die nog op verzonden staat en de leverancier"
+" een oplopende reeks herinneringen stuurt: een vriendelijke herinnering, een"
+" dringende herinnering en daarna een laatste bericht. De termijnen zijn "
+"standaard 3, 7 en 14 dagen na het versturen van de aanvraag en in te stellen"
+" bij de inkoopinstellingen. Elke herinnering wordt per order vastgelegd, "
+"zodat de actie nooit twee keer dezelfde e-mail stuurt, en met een schakelaar"
+" per offerteaanvraag kunnen inkopers stoppen met het opvolgen van een "
+"bepaalde leverancier. De drie berichten zijn bewerkbare mail.template-"
+"records. Odoo volgt alleen de ontvangstdatum van bevestigde inkooporders op "
+"en kan een onbeantwoorde offerteaanvraag niet opvolgen. Puur serverlogica "
+"plus view-overervingen. Geen nieuwe modellen, geen JavaScript."
 
 #. module: no_rfq_follow_up
 #: model_terms:ir.ui.view,arch_db:no_rfq_follow_up.res_config_settings_view_form_rfq_follow_up
@@ -334,8 +384,9 @@ msgid ""
 "this particular RFQ."
 msgstr ""
 "Indien ingeschakeld, stuurt de dagelijkse geplande actie de leverancier een "
-"escalerende vervolgherinnering zolang deze offerteaanvraag onbeantwoord blijft. "
-"Schakel dit uit om de opvolging van deze specifieke offerteaanvraag te stoppen."
+"escalerende vervolgherinnering zolang deze offerteaanvraag onbeantwoord "
+"blijft. Schakel dit uit om de opvolging van deze specifieke offerteaanvraag "
+"te stoppen."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_sent_date
@@ -344,6 +395,6 @@ msgid ""
 "automatically on the draft -> sent transition and used as the anchor for the"
 " follow-up reminder schedule."
 msgstr ""
-"Wanneer deze offerteaanvraag voor het eerst naar de leverancier is verzonden. "
-"Automatisch vastgelegd bij de overgang van concept naar verzonden en gebruikt "
-"als startpunt voor de planning van vervolgherinneringen."
+"Wanneer deze offerteaanvraag voor het eerst naar de leverancier is "
+"verzonden. Automatisch vastgelegd bij de overgang van concept naar verzonden"
+" en gebruikt als startpunt voor de planning van vervolgherinneringen."

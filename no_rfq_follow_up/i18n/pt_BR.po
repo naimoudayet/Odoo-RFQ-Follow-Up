@@ -186,6 +186,15 @@ msgid "Config Settings"
 msgstr "Definições de configuração"
 
 #. module: no_rfq_follow_up
+#: model:ir.module.module,summary:base.module_no_rfq_follow_up
+msgid ""
+"Cron-driven escalating email reminders that chase vendors who have not "
+"answered a sent Request for Quotation."
+msgstr ""
+"Lembretes por e-mail escalonados e agendados que cobram os fornecedores que "
+"não responderam a uma solicitação de cotação enviada."
+
+#. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_3
 msgid ""
 "Days after an RFQ is sent before the final follow-up email is sent, with the"
@@ -267,7 +276,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__id
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_count
@@ -286,6 +295,39 @@ msgstr "Pedido de compra"
 #: model:ir.actions.server,name:no_rfq_follow_up.ir_cron_rfq_follow_up_reminder_ir_actions_server
 msgid "Purchase: Send RFQ follow-up reminders"
 msgstr "Compras: Enviar lembretes de acompanhamento de cotações"
+
+#. module: no_rfq_follow_up
+#: model:ir.module.module,shortdesc:base.module_no_rfq_follow_up
+msgid "RFQ Follow-Up Reminder"
+msgstr "Lembrete de acompanhamento de cotações"
+
+#. module: no_rfq_follow_up
+#: model:ir.module.module,description:base.module_no_rfq_follow_up
+msgid ""
+"RFQ Follow-Up Reminder runs a daily scheduled action that scans every "
+"Request for Quotation still in the sent state and emails the vendor an "
+"escalating sequence of follow-up reminders: a gentle nudge, a firm reminder,"
+" then a final notice. Reminder offsets default to 3, 7 and 14 days after the"
+" RFQ was sent and are configurable from Purchase Settings. Each reminder is "
+"tracked per order so the cron never sends the same email twice, and a per-"
+"RFQ toggle lets buyers stop chasing a specific vendor. The three messages "
+"are editable mail.template records. Native Odoo only chases the receipt date"
+" of confirmed purchase orders and has no mechanism to chase an unanswered "
+"RFQ. Pure server-side logic plus view inherits. No new models, no "
+"JavaScript."
+msgstr ""
+"Lembrete de acompanhamento de cotações executa uma ação agendada diária que "
+"percorre cada solicitação de cotação ainda no estado enviada e envia ao "
+"fornecedor uma sequência escalonada de lembretes: um aviso gentil, um "
+"lembrete firme e depois um aviso final. Os prazos são, por padrão, de 3, 7 e"
+" 14 dias após o envio da solicitação e configuráveis nas configurações de "
+"Compras. Cada lembrete fica registrado por pedido, então a ação nunca envia "
+"o mesmo e-mail duas vezes, e uma chave por solicitação permite ao comprador "
+"parar de cobrar um fornecedor específico. As três mensagens são registros "
+"mail.template editáveis. O Odoo só cobra a data de recebimento de pedidos de"
+" compra confirmados e não tem como cobrar uma solicitação de cotação sem "
+"resposta. Lógica apenas no servidor e heranças de visões. Sem novos modelos,"
+" sem JavaScript."
 
 #. module: no_rfq_follow_up
 #: model_terms:ir.ui.view,arch_db:no_rfq_follow_up.res_config_settings_view_form_rfq_follow_up

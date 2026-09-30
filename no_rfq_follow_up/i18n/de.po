@@ -167,8 +167,8 @@ msgid ""
 "Automatically email vendors an escalating reminder while a sent RFQ stays "
 "unanswered"
 msgstr ""
-"Lieferanten automatisch per E-Mail mit eskalierenden Erinnerungen kontaktieren,"
-" solange eine gesendete Angebotsanfrage unbeantwortet bleibt"
+"Lieferanten automatisch per E-Mail mit eskalierenden Erinnerungen "
+"kontaktieren, solange eine gesendete Angebotsanfrage unbeantwortet bleibt"
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_sent
@@ -188,14 +188,24 @@ msgid "Config Settings"
 msgstr "Konfigurationseinstellungen"
 
 #. module: no_rfq_follow_up
+#: model:ir.module.module,summary:base.module_no_rfq_follow_up
+msgid ""
+"Cron-driven escalating email reminders that chase vendors who have not "
+"answered a sent Request for Quotation."
+msgstr ""
+"Geplante, stufenweise E-Mail-Erinnerungen, die bei Lieferanten nachhaken, "
+"die auf eine gesendete Angebotsanfrage nicht geantwortet haben."
+
+#. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_3
 msgid ""
 "Days after an RFQ is sent before the final follow-up email is sent, with the"
 " buyer copied in. Should be larger than the second reminder."
 msgstr ""
-"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die abschließende"
-" Nachfass-E-Mail versendet wird – dabei wird der Einkäufer in Kopie gesetzt."
-" Dieser Wert sollte größer sein als der der zweiten Erinnerung."
+"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die "
+"abschließende Nachfass-E-Mail versendet wird – dabei wird der Einkäufer in "
+"Kopie gesetzt. Dieser Wert sollte größer sein als der der zweiten "
+"Erinnerung."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
@@ -203,8 +213,8 @@ msgid ""
 "Days after an RFQ is sent before the first (gentle) follow-up email is sent "
 "to the vendor."
 msgstr ""
-"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die erste"
-" (freundliche) Nachfass-E-Mail an den Lieferanten versendet wird."
+"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die erste "
+"(freundliche) Nachfass-E-Mail an den Lieferanten versendet wird."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_2
@@ -212,9 +222,9 @@ msgid ""
 "Days after an RFQ is sent before the second (firm) follow-up email is sent. "
 "Should be larger than the first reminder."
 msgstr ""
-"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die zweite"
-" (bestimmtere) Nachfass-E-Mail versendet wird. Dieser Wert sollte größer"
-" sein als der der ersten Erinnerung."
+"Anzahl der Tage nach dem Versand einer Angebotsanfrage, bevor die zweite "
+"(bestimmtere) Nachfass-E-Mail versendet wird. Dieser Wert sollte größer sein"
+" als der der ersten Erinnerung."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__display_name
@@ -232,18 +242,22 @@ msgstr "Letzte Erinnerung (Tage nach Versand)"
 msgid ""
 "Final reminder sent when a vendor has gone silent; the buyer is copied in."
 msgstr ""
-"Letzte Erinnerung, die versendet wird, wenn ein Lieferant nicht mehr"
-" reagiert; der Einkäufer wird in Kopie gesetzt."
+"Letzte Erinnerung, die versendet wird, wenn ein Lieferant nicht mehr "
+"reagiert; der Einkäufer wird in Kopie gesetzt."
 
 #. module: no_rfq_follow_up
 #: model:mail.template,subject:no_rfq_follow_up.template_rfq_reminder_3
 msgid "Final reminder: response needed on RFQ {{ object.name }}"
-msgstr "Letzte Erinnerung: Antwort zur Angebotsanfrage {{ object.name }} erforderlich"
+msgstr ""
+"Letzte Erinnerung: Antwort zur Angebotsanfrage {{ object.name }} "
+"erforderlich"
 
 #. module: no_rfq_follow_up
 #: model:mail.template,description:no_rfq_follow_up.template_rfq_reminder_2
 msgid "Firmer reminder sent when a vendor still has not answered the RFQ."
-msgstr "Bestimmtere Erinnerung, die versendet wird, wenn ein Lieferant die Angebotsanfrage noch immer nicht beantwortet hat."
+msgstr ""
+"Bestimmtere Erinnerung, die versendet wird, wenn ein Lieferant die "
+"Angebotsanfrage noch immer nicht beantwortet hat."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__x_rfq_reminder_offset_1
@@ -260,22 +274,22 @@ msgstr "Nachfrage: Angebotsanfrage {{ object.name }}"
 msgid ""
 "Friendly first follow-up sent when a vendor has not yet answered a sent RFQ."
 msgstr ""
-"Freundliche erste Nachfass-E-Mail, die versendet wird, wenn ein Lieferant"
-" eine gesendete Angebotsanfrage noch nicht beantwortet hat."
+"Freundliche erste Nachfass-E-Mail, die versendet wird, wenn ein Lieferant "
+"eine gesendete Angebotsanfrage noch nicht beantwortet hat."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_purchase_order__id
 #: model:ir.model.fields,field_description:no_rfq_follow_up.field_res_config_settings__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_reminder_count
 msgid ""
 "Number of follow-up reminder emails already sent to the vendor for this RFQ."
 msgstr ""
-"Anzahl der bereits an den Lieferanten gesendeten Nachfass-Erinnerungs-E-Mails"
-" für diese Angebotsanfrage."
+"Anzahl der bereits an den Lieferanten gesendeten Nachfass-Erinnerungs-E-"
+"Mails für diese Angebotsanfrage."
 
 #. module: no_rfq_follow_up
 #: model:ir.model,name:no_rfq_follow_up.model_purchase_order
@@ -286,6 +300,40 @@ msgstr "Bestellung"
 #: model:ir.actions.server,name:no_rfq_follow_up.ir_cron_rfq_follow_up_reminder_ir_actions_server
 msgid "Purchase: Send RFQ follow-up reminders"
 msgstr "Einkauf: Nachfass-Erinnerungen für Angebotsanfragen versenden"
+
+#. module: no_rfq_follow_up
+#: model:ir.module.module,shortdesc:base.module_no_rfq_follow_up
+msgid "RFQ Follow-Up Reminder"
+msgstr "Nachfass-Erinnerung für Angebotsanfragen"
+
+#. module: no_rfq_follow_up
+#: model:ir.module.module,description:base.module_no_rfq_follow_up
+msgid ""
+"RFQ Follow-Up Reminder runs a daily scheduled action that scans every "
+"Request for Quotation still in the sent state and emails the vendor an "
+"escalating sequence of follow-up reminders: a gentle nudge, a firm reminder,"
+" then a final notice. Reminder offsets default to 3, 7 and 14 days after the"
+" RFQ was sent and are configurable from Purchase Settings. Each reminder is "
+"tracked per order so the cron never sends the same email twice, and a per-"
+"RFQ toggle lets buyers stop chasing a specific vendor. The three messages "
+"are editable mail.template records. Native Odoo only chases the receipt date"
+" of confirmed purchase orders and has no mechanism to chase an unanswered "
+"RFQ. Pure server-side logic plus view inherits. No new models, no "
+"JavaScript."
+msgstr ""
+"Nachfass-Erinnerung für Angebotsanfragen führt täglich eine geplante Aktion "
+"aus, die jede noch im Status Gesendet stehende Angebotsanfrage prüft und dem"
+" Lieferanten eine stufenweise Folge von Erinnerungen schickt: einen "
+"freundlichen Hinweis, eine nachdrückliche Erinnerung und schließlich eine "
+"letzte Mitteilung. Die Fristen betragen standardmäßig 3, 7 und 14 Tage nach "
+"dem Versand der Anfrage und lassen sich in den Einkaufseinstellungen "
+"anpassen. Jede Erinnerung wird pro Auftrag festgehalten, sodass die Aktion "
+"nie zweimal dieselbe E-Mail sendet, und ein Schalter pro Anfrage lässt "
+"Einkäufer das Nachfassen bei einem bestimmten Lieferanten beenden. Die drei "
+"Nachrichten sind bearbeitbare mail.template-Datensätze. Odoo hakt nur beim "
+"Liefertermin bestätigter Bestellungen nach und kann eine unbeantwortete "
+"Angebotsanfrage nicht nachfassen. Reine serverseitige Logik und "
+"Ansichtsvererbungen. Keine neuen Modelle, kein JavaScript."
 
 #. module: no_rfq_follow_up
 #: model_terms:ir.ui.view,arch_db:no_rfq_follow_up.res_config_settings_view_form_rfq_follow_up
@@ -339,10 +387,10 @@ msgid ""
 "follow-up reminder while this RFQ stays unanswered. Untick to stop chasing "
 "this particular RFQ."
 msgstr ""
-"Wenn aktiviert, sendet der tägliche geplante Vorgang dem Lieferanten"
-" eskalierende Nachfass-Erinnerungen, solange diese Angebotsanfrage"
-" unbeantwortet bleibt. Deaktivieren Sie diese Option, um die Nachverfolgung"
-" dieser bestimmten Angebotsanfrage zu beenden."
+"Wenn aktiviert, sendet der tägliche geplante Vorgang dem Lieferanten "
+"eskalierende Nachfass-Erinnerungen, solange diese Angebotsanfrage "
+"unbeantwortet bleibt. Deaktivieren Sie diese Option, um die Nachverfolgung "
+"dieser bestimmten Angebotsanfrage zu beenden."
 
 #. module: no_rfq_follow_up
 #: model:ir.model.fields,help:no_rfq_follow_up.field_purchase_order__x_rfq_sent_date
@@ -351,6 +399,7 @@ msgid ""
 "automatically on the draft -> sent transition and used as the anchor for the"
 " follow-up reminder schedule."
 msgstr ""
-"Zeitpunkt, zu dem diese Angebotsanfrage erstmals an den Lieferanten versendet"
-" wurde. Wird automatisch beim Übergang von Entwurf zu Versendet gesetzt und"
-" dient als Ausgangspunkt für den Zeitplan der Nachfass-Erinnerungen."
+"Zeitpunkt, zu dem diese Angebotsanfrage erstmals an den Lieferanten "
+"versendet wurde. Wird automatisch beim Übergang von Entwurf zu Versendet "
+"gesetzt und dient als Ausgangspunkt für den Zeitplan der Nachfass-"
+"Erinnerungen."
