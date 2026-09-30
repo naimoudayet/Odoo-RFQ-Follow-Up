@@ -3,6 +3,14 @@
 All notable changes to **RFQ Follow-Up Reminder** are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [20.0.1.1.0] - 2026-09-30
+
+### Changed
+- Ported to Odoo 20 (official `odoo:20` image; full test suite passes). The
+  three reminder offsets are read with Odoo 20's typed settings API; the call
+  the module used on 19 no longer exists on 20.
+- App Store listing: the screenshots were retaken on Odoo 20.
+
 ## [19.0.1.1.0]
 
 ### Changed

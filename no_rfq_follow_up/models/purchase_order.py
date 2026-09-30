@@ -66,8 +66,8 @@ class PurchaseOrder(models.Model):
         copy=False,
         readonly=True,
         help="When this Request for Quotation was first sent to the vendor. "
-             "Stamped automatically on the draft -> sent transition and used "
-             "as the anchor for the follow-up reminder schedule.",
+        "Stamped automatically on the draft -> sent transition and used "
+        "as the anchor for the follow-up reminder schedule.",
     )
     x_rfq_reminder_sent = fields.Char(
         string="RFQ Reminders Sent",
@@ -75,23 +75,23 @@ class PurchaseOrder(models.Model):
         copy=False,
         readonly=True,
         help="Comma-separated tokens marking which follow-up reminders have "
-             "already fired for this RFQ (e.g. 'r1,r2'). Used by the daily "
-             "cron to avoid sending the same reminder twice.",
+        "already fired for this RFQ (e.g. 'r1,r2'). Used by the daily "
+        "cron to avoid sending the same reminder twice.",
     )
     x_rfq_reminder_count = fields.Integer(
         string="Reminders Sent",
         compute="_compute_x_rfq_reminder_count",
         store=True,
         help="Number of follow-up reminder emails already sent to the vendor "
-             "for this RFQ.",
+        "for this RFQ.",
     )
     x_rfq_reminder_enabled = fields.Boolean(
         string="Auto-Chase Vendor",
         default=True,
         copy=False,
         help="When enabled, the daily scheduled action emails the vendor an "
-             "escalating follow-up reminder while this RFQ stays unanswered. "
-             "Untick to stop chasing this particular RFQ.",
+        "escalating follow-up reminder while this RFQ stays unanswered. "
+        "Untick to stop chasing this particular RFQ.",
     )
 
     @api.depends("x_rfq_reminder_sent")
@@ -128,10 +128,12 @@ class PurchaseOrder(models.Model):
             # A reset RFQ should chase from scratch when it is re-sent.
             to_reset = self.filtered("x_rfq_sent_date")
             if to_reset:
-                to_reset.write({
-                    "x_rfq_sent_date": False,
-                    "x_rfq_reminder_sent": "",
-                })
+                to_reset.write(
+                    {
+                        "x_rfq_sent_date": False,
+                        "x_rfq_reminder_sent": "",
+                    }
+                )
         return res
 
     # ------------------------------------------------------------------
@@ -141,9 +143,7 @@ class PurchaseOrder(models.Model):
         """Return True if ``token`` is already recorded in x_rfq_reminder_sent."""
         self.ensure_one()
         sent = self.x_rfq_reminder_sent or ""
-        return token in {
-            part.strip() for part in sent.split(",") if part.strip()
-        }
+        return token in {part.strip() for part in sent.split(",") if part.strip()}
 
     def _mark_rfq_reminder_sent(self, token):
         """Append ``token`` to x_rfq_reminder_sent if not already present."""
@@ -164,9 +164,7 @@ class PurchaseOrder(models.Model):
         exist post-install).
         """
         self.ensure_one()
-        template = self.env.ref(
-            TEMPLATE_XMLIDS[token], raise_if_not_found=False
-        )
+        template = self.env.ref(TEMPLATE_XMLIDS[token], raise_if_not_found=False)
         if not template:
             return False
         # force_send=True: the mail.mail queue cron may not run before the
@@ -179,19 +177,15 @@ class PurchaseOrder(models.Model):
     def _rfq_reminder_offsets(self):
         """Return ``[(token, days), ...]`` in fixed escalation order.
 
-        Days come from ir.config_parameter (set via Purchase Settings); a
-        missing or non-integer value falls back to the hard default.
+        Days come from ir.config_parameter (set via Purchase Settings);
+        ``get_int`` returns the hard default for a missing or non-integer
+        value.
         """
-        get_param = self.env["ir.config_parameter"].sudo().get_param
+        get_int = self.env["ir.config_parameter"].sudo().get_int
         offsets = []
         for token in REMINDER_TOKENS:
             key, default = OFFSET_PARAMS[token]
-            raw = get_param(key, default)
-            try:
-                days = int(raw)
-            except (TypeError, ValueError):
-                days = default
-            offsets.append((token, max(days, 0)))
+            offsets.append((token, max(get_int(key, default), 0)))
         return offsets
 
     @api.model
@@ -208,17 +202,19 @@ class PurchaseOrder(models.Model):
         today = fields.Date.context_today(self)
         offsets = self._rfq_reminder_offsets()
 
-        orders = self.search([
-            ("state", "=", "sent"),
-            ("x_rfq_reminder_enabled", "=", True),
-            ("x_rfq_sent_date", "!=", False),
-        ])
+        orders = self.search(
+            [
+                ("state", "=", "sent"),
+                ("x_rfq_reminder_enabled", "=", True),
+                ("x_rfq_sent_date", "!=", False),
+            ]
+        )
         for order in orders:
             elapsed = (today - order.x_rfq_sent_date.date()).days
             due = [
-                token for token, days in offsets
-                if elapsed >= days
-                and not order._rfq_reminder_token_sent(token)
+                token
+                for token, days in offsets
+                if elapsed >= days and not order._rfq_reminder_token_sent(token)
             ]
             if not due:
                 continue
