@@ -33,17 +33,21 @@ class TestRfqFollowUp(TransactionCase):
         cls.PurchaseOrder = cls.env["purchase.order"]
         cls.MailMail = cls.env["mail.mail"]
 
-        cls.vendor = cls.env["res.partner"].create({
-            "name": "RFQ Test Vendor",
-            "email": "rfq.vendor@example.com",
-        })
+        cls.vendor = cls.env["res.partner"].create(
+            {
+                "name": "RFQ Test Vendor",
+                "email": "rfq.vendor@example.com",
+            }
+        )
         # type='consu' keeps the product purchasable without pulling in
         # stock-only constraints.
-        cls.product = cls.env["product.product"].create({
-            "name": "RFQ Test Component",
-            "type": "consu",
-            "list_price": 50.0,
-        })
+        cls.product = cls.env["product.product"].create(
+            {
+                "name": "RFQ Test Component",
+                "type": "consu",
+                "list_price": 50.0,
+            }
+        )
         # On v18, --test-enable marks the mocked send "sent" and auto_delete
         # then unlinks the mail.mail before the asserts count it. Disable
         # auto_delete on the module templates so the rows persist for the
@@ -68,30 +72,40 @@ class TestRfqFollowUp(TransactionCase):
         transition; the explicit write afterwards overrides it with the
         back-dated anchor.
         """
-        order = self.PurchaseOrder.create({
-            "partner_id": self.vendor.id,
-            "order_line": [(0, 0, {
-                "product_id": self.product.id,
-                "product_qty": 1.0,
-                "price_unit": 50.0,
-                "name": "RFQ Test Component",
-            })],
-        })
+        order = self.PurchaseOrder.create(
+            {
+                "partner_id": self.vendor.id,
+                "order_line": [
+                    (
+                        0,
+                        0,
+                        {
+                            "product_id": self.product.id,
+                            "product_qty": 1.0,
+                            "price_unit": 50.0,
+                            "name": "RFQ Test Component",
+                        },
+                    )
+                ],
+            }
+        )
         if state and state != "draft":
             order.write({"state": state})
         vals = {"x_rfq_reminder_enabled": enabled}
         if sent_days_ago is not None:
-            vals["x_rfq_sent_date"] = (
-                fields.Datetime.now() - timedelta(days=sent_days_ago)
+            vals["x_rfq_sent_date"] = fields.Datetime.now() - timedelta(
+                days=sent_days_ago
             )
         order.write(vals)
         return order
 
     def _count_mail(self, subject_fragment):
         """Count mail.mail rows whose subject contains `subject_fragment`."""
-        return self.MailMail.search_count([
-            ("subject", "ilike", subject_fragment),
-        ])
+        return self.MailMail.search_count(
+            [
+                ("subject", "ilike", subject_fragment),
+            ]
+        )
 
     def test_first_reminder_sent(self):
         """RFQ sent 3 days ago -> the gentle reminder fires and stamps r1."""
@@ -101,11 +115,13 @@ class TestRfqFollowUp(TransactionCase):
         self.PurchaseOrder._cron_send_rfq_reminders()
 
         self.assertEqual(
-            self._count_mail("Following up") - before, 1,
+            self._count_mail("Following up") - before,
+            1,
             "The first cron pass must send exactly one gentle reminder.",
         )
         self.assertIn(
-            "r1", order.x_rfq_reminder_sent or "",
+            "r1",
+            order.x_rfq_reminder_sent or "",
             "x_rfq_reminder_sent must record the 'r1' token.",
         )
         self.assertEqual(order.x_rfq_reminder_count, 1)
@@ -119,7 +135,8 @@ class TestRfqFollowUp(TransactionCase):
         self.PurchaseOrder._cron_send_rfq_reminders()
 
         self.assertEqual(
-            self._count_mail("Following up") - before, 1,
+            self._count_mail("Following up") - before,
+            1,
             "The second cron pass must NOT re-send the gentle reminder.",
         )
 
@@ -131,7 +148,8 @@ class TestRfqFollowUp(TransactionCase):
         self.PurchaseOrder._cron_send_rfq_reminders()
 
         self.assertEqual(
-            self._count_mail("Following up") - before, 0,
+            self._count_mail("Following up") - before,
+            0,
             "Draft RFQs must be skipped by the follow-up cron.",
         )
         self.assertFalse(order.x_rfq_reminder_sent)
@@ -144,7 +162,8 @@ class TestRfqFollowUp(TransactionCase):
         self.PurchaseOrder._cron_send_rfq_reminders()
 
         self.assertEqual(
-            self._count_mail("Following up") - before, 0,
+            self._count_mail("Following up") - before,
+            0,
             "RFQs with auto-chase disabled must be skipped.",
         )
         self.assertFalse(order.x_rfq_reminder_sent)
@@ -157,7 +176,8 @@ class TestRfqFollowUp(TransactionCase):
         self.PurchaseOrder._cron_send_rfq_reminders()
 
         self.assertEqual(
-            self._count_mail("Following up") - before, 0,
+            self._count_mail("Following up") - before,
+            0,
             "Confirmed purchase orders must be skipped by the cron.",
         )
         self.assertFalse(order.x_rfq_reminder_sent)
@@ -171,11 +191,13 @@ class TestRfqFollowUp(TransactionCase):
         self.PurchaseOrder._cron_send_rfq_reminders()
 
         self.assertEqual(
-            self._count_mail("still pending") - before_firm, 1,
+            self._count_mail("still pending") - before_firm,
+            1,
             "At the second offset the firm reminder must be the one emailed.",
         )
         self.assertEqual(
-            self._count_mail("Following up") - before_gentle, 0,
+            self._count_mail("Following up") - before_gentle,
+            0,
             "The gentle reminder must be consumed silently, not emailed.",
         )
         self.assertIn("r1", order.x_rfq_reminder_sent or "")
@@ -191,19 +213,23 @@ class TestRfqFollowUp(TransactionCase):
         self.PurchaseOrder._cron_send_rfq_reminders()
 
         self.assertEqual(
-            self._count_mail("Final reminder") - before_final, 1,
+            self._count_mail("Final reminder") - before_final,
+            1,
             "A long-overdue RFQ must get exactly one final reminder.",
         )
         self.assertEqual(
-            self._count_mail("Following up") - before_gentle, 0,
+            self._count_mail("Following up") - before_gentle,
+            0,
             "No gentle reminder email on a long-overdue RFQ.",
         )
         self.assertEqual(
-            self._count_mail("still pending") - before_firm, 0,
+            self._count_mail("still pending") - before_firm,
+            0,
             "No firm reminder email on a long-overdue RFQ.",
         )
         self.assertEqual(
-            order.x_rfq_reminder_count, 3,
+            order.x_rfq_reminder_count,
+            3,
             "All three tokens must be recorded (one emailed, two consumed).",
         )
 
