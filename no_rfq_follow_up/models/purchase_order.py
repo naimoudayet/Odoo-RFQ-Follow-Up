@@ -32,7 +32,7 @@ Design notes
 * Offsets (default 3 / 7 / 14 days) are read from ``ir.config_parameter``
   so admins tune the cadence from Purchase Settings without touching code.
 """
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 
 # Tokens recorded in x_rfq_reminder_sent. Module-level so the cron, the
 # helpers and the tests all speak the same dialect.
@@ -173,7 +173,25 @@ class PurchaseOrder(models.Model):
         # vendor checks their inbox, which would blunt the follow-up.
         mail_id = template.send_mail(self.id, force_send=True)
         self._mark_rfq_reminder_sent(token)
+        # send_mail emails the vendor but leaves nothing on the RFQ: log the
+        # reminder in the chatter (a logged note notifies no one).
+        subject = template._render_field("subject", self.ids)[self.id]
+        self.sudo()._message_log(
+            body=_(
+                "%(reminder)s emailed to %(vendor)s: %(subject)s",
+                reminder=self._rfq_reminder_label(token),
+                vendor=self.partner_id.display_name,
+                subject=subject,
+            )
+        )
         return mail_id
+
+    def _rfq_reminder_label(self, token):
+        return {
+            TOKEN_1: _("First follow-up reminder"),
+            TOKEN_2: _("Second follow-up reminder"),
+            TOKEN_3: _("Final reminder"),
+        }[token]
 
     @api.model
     def _rfq_reminder_offsets(self):
